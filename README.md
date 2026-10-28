@@ -1,3 +1,3 @@
 # Push_swap
 
-almost, actually, entirely written by Simon, Ghada was also there
+almost, actually, entirely written by Ghada, Simon was never there
