@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/06 16:31:25 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/10/28 16:00:13 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/10/29 15:27:32 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	declare(t_stacks *ab)
 }
 
 /*
-**	Initiates the struckt that holds stacks A and B
+**	Initiates the struct that holds stacks A and B
 **	Checks for duplicate input and non numerical imput
 **	Calls Declare
 */
