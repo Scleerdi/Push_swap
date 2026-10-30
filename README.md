@@ -1,4 +1,4 @@
 # Push_swap
 
-except when actual work had to be done because that was all me -Simon
+all jokes aside, we are both working hard on this project and we devided that tasks evenly as far as i, Simon, am considered
 
