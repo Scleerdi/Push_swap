@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/02 15:37:16 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/02 18:18:28 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ static int	loop(t_stacks *ab, char *str)
 
 int	push_swap(t_stacks *ab)
 {
-	printstacks(ab->a, ab->b);
+	execute(ab, e_sa);
+	execute(ab, e_pb);
+	execute(ab, e_rrr);
+	printstacks(ab);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:42 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/27 16:08:21 by scleerdi      ########   odam.nl         */
+/*   Updated: 2026/11/02 18:19:21 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,14 @@ static	void	print_list(t_stack *stack)
 ** Print stacks for debug purposes
 */
 
-void	printstacks(t_stack *a, t_stack *b)
+void	printstacks(t_stacks *ab)
 {
-	ft_putstr_fd("stack A:\n", 1);
-	print_list(a);
-	ft_putstr_fd("stack B:\n", 1);
-	print_list(b);
+	ft_putstr_fd("size of A : ", 1);
+	ft_putnbr_fd(ab->size_a, 1);
+	ft_putstr_fd("\nstack A:\n", 1);
+	print_list(ab->a);
+	ft_putstr_fd("size of B : ", 1);
+	ft_putnbr_fd(ab->size_b, 1);
+	ft_putstr_fd("\nstack B:\n", 1);
+	print_list(ab->b);
 }
