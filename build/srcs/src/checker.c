@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 /*
 **	Converts the written commands to executable commands
@@ -20,27 +19,27 @@
 
 int	convert_to_command(t_stacks *ab, char *line)
 {
-	if (ft_strequ(line, "sa"))
+	if (!ft_strncmp(line, "sa", 4))
 		execute_c(ab, e_sa);
-	else if (ft_strequ(line, "sb"))
+	else if (!ft_strncmp(line, "sb", 4))
 		execute_c(ab, e_sb);
-	else if (ft_strequ(line, "ra"))
+	else if (!ft_strncmp(line, "ra", 4))
 		execute_c(ab, e_ra);
-	else if (ft_strequ(line, "rb"))
+	else if (!ft_strncmp(line, "rb", 4))
 		execute_c(ab, e_rb);
-	else if (ft_strequ(line, "rra"))
+	else if (!ft_strncmp(line, "rra", 4))
 		execute_c(ab, e_rra);
-	else if (ft_strequ(line, "rrb"))
+	else if (!ft_strncmp(line, "rrb", 4))
 		execute_c(ab, e_rrb);
-	else if (ft_strequ(line, "pa"))
+	else if (!ft_strncmp(line, "pa", 4))
 		execute_c(ab, e_pa);
-	else if (ft_strequ(line, "pb"))
+	else if (!ft_strncmp(line, "pb", 4))
 		execute_c(ab, e_pb);
-	else if (ft_strequ(line, "ss"))
+	else if (!ft_strncmp(line, "ss", 4))
 		execute_c(ab, e_ss);
-	else if (ft_strequ(line, "rr"))
+	else if (!ft_strncmp(line, "rr", 4))
 		execute_c(ab, e_rr);
-	else if (ft_strequ(line, "rrr"))
+	else if (!ft_strncmp(line, "rrr", 4))
 		execute_c(ab, e_rrr);
 	else
 		return (0);
@@ -49,30 +48,25 @@ int	convert_to_command(t_stacks *ab, char *line)
 
 /*
 **	Calls convert_to_command and reads the input supplied by the user
+**	Returns -1 on an invalid instruction, else 1 if sorted and 0 if not
 */
 
 int	checker(t_stacks *ab)
 {
 	char	*line;
-	int		ret;
 
-	line = ft_strdup("");
-	ret = 1;
-	while (ret == 1)
+	line = read_line(0);
+	while (line)
 	{
-		ret = ft_get_next_line(0, &line);
-		if (ret == -1)
-			return (-1);
-		if (convert_to_command(ab, line) == 0 && *line != '\0')
+		if (convert_to_command(ab, line) == 0)
 		{
 			free(line);
-			return (2);
+			return (-1);
 		}
 		free(line);
+		line = read_line(0);
 	}
-	if (sorted(ab) == 0)
-		return (0);
-	return (1);
+	return (sorted(ab));
 }
 
 /*
@@ -84,7 +78,7 @@ static	int	loop(t_stacks *ab, char *str)
 {
 	t_stack		*current;
 
-	if (arg_check(ab->a, ft_atoi(str), str))
+	if (arg_check(ab->a, str))
 		return (error_delete_all(ab));
 	current = create_node(ft_atoi(str));
 	if (!current)
@@ -111,14 +105,10 @@ void	declare(t_stacks *ab)
 	if (ab->size_a != 0)
 	{
 		ret = checker(ab);
-		if (ret == 2 && sorted(ab) == 0)
-			ft_putendl_fd("KO", 1);
-		else if (ret == 2 && sorted(ab) == 1)
+		if (ret == -1)
 			error_delete_all(ab);
 		else if (ret == 0)
 			ft_putendl_fd("KO", 1);
-		else if (ret == -1)
-			error_delete_all(ab);
 		else
 			ft_putendl_fd("OK", 1);
 	}

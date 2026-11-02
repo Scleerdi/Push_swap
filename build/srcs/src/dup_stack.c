@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:16 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/20 12:47:52 by scleerdi      ########   odam.nl         */
+/*   Updated: 2026/11/02 11:47:39 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void	dup_stack(t_stacks const *ab, t_stacks *dup_ab)
 {
 	dup_ab->size_a = ab->size_a;
 	dup_ab->size_b = ab->size_b;
-	dup_ab->lead_a = ab->lead_a;
-	dup_ab->lead_b = ab->lead_b;
 	dup_ab->a = dup_astack(ab->a);
 	dup_ab->b = dup_astack(ab->b);
 }

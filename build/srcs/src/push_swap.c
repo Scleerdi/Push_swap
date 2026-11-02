@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/10/30 14:52:00 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/02 11:53:13 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,15 @@
 **	converts the arguments into stack A data nodes
 */
 
-int	loop(t_stacks *ab, char *str)
+static int	loop(t_stacks *ab, char *str)
 {
 	t_stack		*current;
 
 	current = create_node(ft_atoi(str));
 	if (!current)
-		return (error_delete_all(ab));
-	if (ab->a == NULL)
-		ab->a = current;
-	else
-	{
-		current->next = ab->a;
-		ab->a = current;
-	}
+		return (1);
+	current->next = ab->a;
+	ab->a = current;
 	return (0);
 }
 
@@ -59,14 +54,12 @@ int	main(int argc, char **argv)
 	ab.size_a = argc - 1;
 	while (i > 0)
 	{
-		if (arg_check(ab.a, ft_atoi(argv[i]), argv[i]))
+		if (arg_check(ab.a, argv[i]) || loop(&ab, argv[i]))
 			return (error_delete_all(&ab));
-		loop(&ab, argv[i]);
 		i--;
 	}
 	if (ab.size_a != 0 && sorted(&ab) == 0)
 		push_swap(&ab);
-	printstacks(ab.a, ab.b);
 	del_stacks(&ab.a, &ab.b);
 	return (0);
 }

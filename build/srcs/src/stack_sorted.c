@@ -21,6 +21,8 @@ int	stack_sorted(t_stack **stack)
 	t_stack	*current;
 
 	current = *stack;
+	if (current == NULL)
+		return (1);
 	while (current->next != NULL)
 	{
 		if (current->data > current->next->data)

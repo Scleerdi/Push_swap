@@ -20,7 +20,7 @@ t_stack	*create_node(int data)
 {
 	t_stack	*node;
 
-	node = ft_memalloc(sizeof(t_stack));
+	node = ft_calloc(1, sizeof(t_stack));
 	if (!node)
 		return (NULL);
 	node->data = data;

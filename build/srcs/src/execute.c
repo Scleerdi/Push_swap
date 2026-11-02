@@ -18,7 +18,7 @@
 
 static	void	print_op(t_op operation)
 {
-	const char	*flutes[OP_COUNT] = {
+	char *const	flutes[OP_COUNT] = {
 	[e_sa] = "sa\n",
 	[e_sb] = "sb\n",
 	[e_ra] = "ra\n",
@@ -32,22 +32,22 @@ static	void	print_op(t_op operation)
 	[e_rrr] = "rrr\n",
 	};
 
-	(void)flutes[operation];
 	ft_putstr_fd(flutes[operation], 1);
 }
 
 /*
 ** Updates stack size counters
+** A push from an empty stack does nothing, so the counters must not move
 */
 
 static	void	update_stack_size(t_stacks *ab, t_op operation)
 {
-	if (operation == e_pa)
+	if (operation == e_pa && ab->b != NULL)
 	{
 		ab->size_a++;
 		ab->size_b--;
 	}
-	else if (operation == e_pb)
+	else if (operation == e_pb && ab->a != NULL)
 	{
 		ab->size_a--;
 		ab->size_b++;
@@ -55,11 +55,11 @@ static	void	update_stack_size(t_stacks *ab, t_op operation)
 }
 
 /*
-** Executes and prints the operation
+** Executes the operation without printing it (used by the checker)
 ** Updates stack size counters
 */
 
-void	execute(t_stacks *ab, t_op operation)
+void	execute_c(t_stacks *ab, t_op operation)
 {
 	const t_operation	exectable[OP_COUNT] = {
 	[e_sa] = &swap_a,
@@ -77,5 +77,14 @@ void	execute(t_stacks *ab, t_op operation)
 
 	update_stack_size(ab, operation);
 	exectable[operation](ab);
+}
+
+/*
+** Executes and prints the operation
+*/
+
+void	execute(t_stacks *ab, t_op operation)
+{
+	execute_c(ab, operation);
 	print_op(operation);
 }

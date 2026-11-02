@@ -19,6 +19,6 @@
 int	error_delete_all(t_stacks *ab)
 {
 	del_stacks(&ab->a, &ab->b);
-	ft_putendl_fd("Error", 1);
+	ft_putendl_fd("Error", 2);
 	return (1);
 }

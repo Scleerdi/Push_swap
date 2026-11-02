@@ -10,44 +10,69 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAMEP = push_swap
-NAMEC = checker
+NAMEP		= push_swap
+NAMEC		= checker
 
-SRCP = push_swap create_node sorted stack_sorted dup_stack del_stacks \
-push_stack swap_stack rotate_stack reverse_rotate_stack execute   \
-arg_check error_delete_all printstacks
+SRC_DIR		= srcs/src
+OBJ_DIR		= obj
+LIBFT_DIR	= srcs/libft
+LIBFT		= $(LIBFT_DIR)/libft.a
 
-SRCC = checker create_node del_stacks sorted stack_sorted execute_c \
-swap_stack rotate_stack reverse_rotate_stack push_stack \
-error_delete_all arg_check printstacks 
+# Sources used by BOTH programs. A new shared .c file goes here, nowhere else.
+SRC_COMMON	= arg_check create_node del_stacks dup_stack error_delete_all \
+			execute printstacks push_stack reverse_rotate_stack \
+			rotate_stack sorted stack_sorted swap_stack
 
-SRCP := $(SRCP:%=srcs/source/%.c)
-OBJP = $(SRCP:%.c=%.o)
-SRCC := $(SRCC:%=srcs/source/%.c)
-OBJC = $(SRCC:%.c=%.o)
-INC = -I srcs/libft/includes/
-FLAGS = -g -Wall -Werror -Wextra
+# Sources used by only one program (each one holds that program's main).
+SRC_P		= push_swap
+SRC_C		= checker read_line
+
+OBJ_COMMON	= $(SRC_COMMON:%=$(OBJ_DIR)/%.o)
+OBJ_P		= $(SRC_P:%=$(OBJ_DIR)/%.o)
+OBJ_C		= $(SRC_C:%=$(OBJ_DIR)/%.o)
+DEPS		= $(OBJ_COMMON:.o=.d) $(OBJ_P:.o=.d) $(OBJ_C:.o=.d)
+
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror -g
+CPPFLAGS	= -I includes -I $(LIBFT_DIR) -MMD -MP
 
 all: $(NAMEP) $(NAMEC)
 
-$(NAMEP): $(OBJP)
-	@make -C srcs/libft/
-	@$(CC) -o $(NAMEP) $(FLAGS) $(OBJP) $(INC) -Lsrcs/libft -lft
+$(NAMEP): $(OBJ_P) $(OBJ_COMMON) $(LIBFT)
+	@$(CC) $(CFLAGS) $(OBJ_P) $(OBJ_COMMON) $(LIBFT) -o $@
+	@echo "Linked $@"
 
-$(NAMEC): $(OBJC)
-	@make -C srcs/libft/
-	@$(CC) -o $(NAMEC) $(FLAGS) $(OBJC) $(INC) -Lsrcs/libft -lft	
+$(NAMEC): $(OBJ_C) $(OBJ_COMMON) $(LIBFT)
+	@$(CC) $(CFLAGS) $(OBJ_C) $(OBJ_COMMON) $(LIBFT) -o $@
+	@echo "Linked $@"
 
-%.o: %.c
-	@echo "Compiling $(shell basename $<)"
-	@$(CC) -o $@ $(FLAGS) $(INC) -c $<
+# libft has its own Makefile, so always ask it whether it has work to do.
+# It only touches libft.a when something changed, so push_swap and checker
+# only relink when libft really was rebuilt.
+$(LIBFT): FORCE
+	@$(MAKE) -s --no-print-directory -C $(LIBFT_DIR)
+
+FORCE:
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	@echo "Compiling $(notdir $<)"
+	@$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $@
+
+# Header dependencies: editing a .h rebuilds every .c that includes it.
+-include $(DEPS)
 
 clean:
-	@-rm -f $(OBJP) $(OBJC)
-	@make -C srcs/libft/ clean
+	@rm -rf $(OBJ_DIR)
+	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) clean
 
 fclean: clean
-	@-rm -f $(NAMEP) $(NAMEC)
-	@make -C srcs/libft/ fclean
+	@rm -f $(NAMEP) $(NAMEC)
+	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) fclean
 
-re: fclean all
+re: fclean
+	@$(MAKE) --no-print-directory all
+
+.PHONY: all clean fclean re FORCE

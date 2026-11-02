@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/10/30 14:52:32 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/02 11:43:40 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ typedef void	(*t_operation)(t_stacks *);
 int					push_swap(t_stacks *ab);
 int					sorted(t_stacks *ab);
 int					stack_sorted(t_stack **stack);
-int					arg_check(t_stack *a, int data, char *argv);
+int					arg_check(t_stack *a, char *str);
+char				*read_line(int fd);
 int					value_exists(t_stack *a, int data);
 int					error_delete_all(t_stacks *ab);
 t_stack				*create_node(int data);

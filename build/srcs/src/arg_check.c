@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <libft.h>
+#include <limits.h>
 
 /*
 **	Looks for duplicate input
@@ -26,9 +26,41 @@ int	value_exists(t_stack *a, int data)
 	return (value_exists(a->next, data));
 }
 
-int	arg_check(t_stack *a, int data, char *str)
+/*
+**	Checks that str is a whole number that fits in an int:
+**	optional sign, at least one digit, nothing but digits after that
+*/
+
+static int	is_int(char *str)
 {
-	if (ft_a_is_int(str) == 1 && value_exists(a, data) == 0)
+	long	nbr;
+	int		neg;
+	int		i;
+
+	i = 0;
+	neg = (str[i] == '-');
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (!ft_isdigit(str[i]))
+		return (0);
+	nbr = 0;
+	while (ft_isdigit(str[i]))
+	{
+		nbr = nbr * 10 + (str[i] - '0');
+		if (nbr - neg > INT_MAX)
+			return (0);
+		i++;
+	}
+	return (str[i] == '\0');
+}
+
+/*
+**	Returns 1 if str is not a valid int or is a duplicate, else 0
+*/
+
+int	arg_check(t_stack *a, char *str)
+{
+	if (is_int(str) && value_exists(a, ft_atoi(str)) == 0)
 		return (0);
 	return (1);
 }
