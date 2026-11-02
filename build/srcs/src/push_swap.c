@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/02 11:53:13 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/02 15:37:16 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ int	main(int argc, char **argv)
 		i--;
 	}
 	if (ab.size_a != 0 && sorted(&ab) == 0)
+	{
+		compute_disorder(&ab);
 		push_swap(&ab);
+	}
 	del_stacks(&ab.a, &ab.b);
 	return (0);
 }

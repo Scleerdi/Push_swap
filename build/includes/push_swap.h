@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/02 16:10:15 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/02 16:16:58 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void				reverse_rotate_b(t_stacks *ab);
 void				ss(t_stacks *ab);
 void				rr(t_stacks *ab);
 void				rrr(t_stacks *ab);
+double				compute_disorder(t_stacks *ab);
 
 #endif
