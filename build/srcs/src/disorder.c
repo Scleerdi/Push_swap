@@ -6,22 +6,21 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 15:35:33 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/02 16:01:28 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/02 16:29:18 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-// please dont look directly at this file, it is very shy
+// please dont look directly at this function, it is very shy
 
 void	convert_disorder(double d)
 {
 	if (d == 1)
 		return (ft_putendl_fd("disorder : 1.000000", 1));
 	d *= 1000000;
-	ft_putstr_fd("disorder : ", 1);
-	ft_putstr_fd("0.", 1);
+	ft_putstr_fd("disorder : 0.", 1);
 	ft_putnbr_fd((int)d, 1);
 	ft_putchar_fd('\n', 1);	
 	return ;
