@@ -1,0 +1,7 @@
+obj/
+push_swap
+checker
+*.o
+*.d
+*.a
+.vscode/
