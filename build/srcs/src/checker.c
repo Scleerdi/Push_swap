@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/06 16:31:25 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/10/29 15:27:32 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/03 17:57:06 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,20 +98,20 @@ static	int	loop(t_stacks *ab, char *str)
 **	Checks the conditions of the stacks after checker has returned
 */
 
-void	declare(t_stacks *ab)
+int	declare(t_stacks *ab)
 {
 	int	ret;
-
-	if (ab->size_a != 0)
-	{
-		ret = checker(ab);
-		if (ret == -1)
-			error_delete_all(ab);
-		else if (ret == 0)
-			ft_putendl_fd("KO", 1);
-		else
-			ft_putendl_fd("OK", 1);
-	}
+	
+	if (ab->size_a == 0)
+   		return (0);
+	ret = checker(ab);
+	if (ret == -1)
+		return (error_delete_all(ab));
+	if (ret == 0)
+		ft_putendl_fd("KO", 1);
+	else
+		ft_putendl_fd("OK", 1);
+	return (0);
 }
 
 /*
@@ -123,6 +123,7 @@ void	declare(t_stacks *ab)
 int	main(int argc, char **argv)
 {
 	int			i;
+	int			ret;
 	t_stacks	ab;
 
 	ft_bzero(&ab, sizeof(t_stacks));
@@ -137,7 +138,8 @@ int	main(int argc, char **argv)
 		}
 		i--;
 	}
-	declare(&ab);
+	printstacks(&ab);
+	ret = declare(&ab);
 	del_stacks(&ab.a, &ab.b);
-	return (0);
+	return (ret);
 }

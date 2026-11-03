@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   read_line.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 15:27:26 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/20 13:38:33 by scleerdi      ########   odam.nl         */
+/*   Created: 2026/11/03 17:16:34 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/03 17:16:42 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

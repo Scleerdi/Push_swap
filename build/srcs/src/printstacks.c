@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:42 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/03 12:40:28 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/03 14:41:01 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ static	void	print_list(t_stack *stack)
 		return ;
 	while (current != NULL)
 	{
-		ft_putendl_fd("data: ", 1);
 		ft_putnbr_fd(current->data, 1);
-		ft_putendl_fd("index: ", 1);
-		ft_putnbr_fd(current->index, 1);
 		ft_putchar_fd('\n', 1);
 		current = current->next;
 	}
@@ -37,12 +34,8 @@ static	void	print_list(t_stack *stack)
 
 void	printstacks(t_stacks *ab)
 {
-	ft_putstr_fd("size of A : ", 1);
-	ft_putnbr_fd(ab->size_a, 1);
 	ft_putstr_fd("\nstack A:\n", 1);
 	print_list(ab->a);
-	ft_putstr_fd("size of B : ", 1);
-	ft_putnbr_fd(ab->size_b, 1);
 	ft_putstr_fd("\nstack B:\n", 1);
 	print_list(ab->b);
 }

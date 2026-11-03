@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/03 12:39:04 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/03 17:36:53 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+#include <stdio.h> //only for testing and later for removing
 
 typedef struct s_stack
 {
@@ -74,6 +75,7 @@ void				reverse_rotate_b(t_stacks *ab);
 void				ss(t_stacks *ab);
 void				rr(t_stacks *ab);
 void				rrr(t_stacks *ab);
+void				chunk_sort(t_stacks *ab);
 double				compute_disorder(t_stacks *ab);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/09/28 14:16:25 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/10/12 12:07:37 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/03 14:08:00 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+int				ft_sqrt(int nb);
 int				ft_isalnum(int x);
 int				ft_isalpha(int x);
 int				ft_isdigit(int x);
