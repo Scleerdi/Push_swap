@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 15:35:33 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/02 16:29:18 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/02 17:44:23 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	convert_disorder(double d)
 	d *= 1000000;
 	ft_putstr_fd("disorder : 0.", 1);
 	ft_putnbr_fd((int)d, 1);
-	ft_putchar_fd('\n', 1);	
+	ft_putchar_fd('\n', 1);
 	return ;
 }
 
