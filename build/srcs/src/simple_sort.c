@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/02 18:23:34 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/03 12:30:55 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,15 @@ int	find_min_position(t_stack *stack)
 	return (position);
 }
 
-void	move_min_to_top(t_stack *stack)
+void	move_min_to_top(t_stacks *ab)
 {
 	int p;
+	t_op op;
 	
-	p = find_min_position()
+	p = find_min_position(&ab->a);
+	while (&ab->a)
+	if (p <= ab->size_a)
+		op = e_ra;
+	else 
+		op = e_rra;
 }
