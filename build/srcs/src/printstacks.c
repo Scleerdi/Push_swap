@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:42 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/02 18:19:21 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/03 12:40:28 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ static	void	print_list(t_stack *stack)
 		return ;
 	while (current != NULL)
 	{
+		ft_putendl_fd("data: ", 1);
 		ft_putnbr_fd(current->data, 1);
+		ft_putendl_fd("index: ", 1);
+		ft_putnbr_fd(current->index, 1);
 		ft_putchar_fd('\n', 1);
 		current = current->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/02 18:14:16 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/03 12:39:04 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct s_stack
 {
 	int				data;
+	int				index;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -61,6 +62,7 @@ void				execute_c(t_stacks *ab, t_op operation);
 void				del_stacks(t_stack **astack_a, t_stack **astack_b);
 void				dup_stack(t_stacks const *ab, t_stacks *dup_ab);
 void				printstacks(t_stacks *ab);
+void				normalize(t_stack *a);
 void				push_a(t_stacks *ab);
 void				push_b(t_stacks *ab);
 void				swap_a(t_stacks *ab);
