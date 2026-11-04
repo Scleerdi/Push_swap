@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/06 16:31:25 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/03 17:57:06 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/04 14:58:12 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,9 @@ static	int	loop(t_stacks *ab, char *str)
 int	declare(t_stacks *ab)
 {
 	int	ret;
-	
+
 	if (ab->size_a == 0)
-   		return (0);
+		return (0);
 	ret = checker(ab);
 	if (ret == -1)
 		return (error_delete_all(ab));
