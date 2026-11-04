@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 18:01:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/04 12:50:23 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/04 15:04:23 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	sort_three(t_stacks *ab)
 {
-	int a;
-	int b;
-	int c;
+	int	a;
+	int	b;
+	int	c;
 
-		if (!ab || !ab->a || ab->size_a != 3)
-		return;
+	if (!ab || !ab->a || ab->size_a != 3)
+		return ;
 	a = ab->a->data;
 	b = ab->a->next->data;
 	c = ab->a->next->next->data;
@@ -38,7 +38,7 @@ void	sort_three(t_stacks *ab)
 		execute(ab, e_ra);
 	}
 	else if (a < b && b > c && a > c)
-		execute(ab, e_rra);	
+		execute(ab, e_rra);
 }
 
 void	sort_simple(t_stacks *ab)
