@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/04 17:46:04 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 12:45:42 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ void				sort_simple(t_stacks *ab);
 double				compute_disorder(t_stacks *ab);
 t_stack				*create_node(int data);
 void				push_stack(t_stack **dst, t_stack **src);
+t_bench				*benchmark(t_stacks *ab, int alg, double d);
 
 #endif
