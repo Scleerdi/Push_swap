@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/04 15:02:45 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/04 17:42:23 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	find_min_position(t_stack *stack)
 	int	i;
 
 	if (!stack)
-		return (-1); //not index? no idea but then again these comments are wrong 
+		return (-1);
 	position = 0;
 	i = 0;
 	min = stack->data;
