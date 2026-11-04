@@ -6,7 +6,11 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
+<<<<<<< HEAD
 /*   Updated: 2026/11/04 16:33:17 by gshabait      ########   odam.nl         */
+=======
+/*   Updated: 2026/11/04 17:04:26 by sicleerd      ########   odam.nl         */
+>>>>>>> d1b733cabbd82170a54f68b61a692b046eaac4a0
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +57,7 @@ int					push_swap(t_stacks *ab);
 int					sorted(t_stacks *ab);
 int					stack_sorted(t_stack **stack);
 int					arg_check(t_stack *a, char *str);
+int					alg_check(char *str);
 int					find_min(t_stack *stack);
 int					find_min_position(t_stack *stack);
 int					error_delete_all(t_stacks *ab);
