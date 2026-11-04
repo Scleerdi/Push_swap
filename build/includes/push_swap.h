@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/04 17:32:58 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/04 17:46:04 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef enum e_op
 
 typedef void	(*t_operation)(t_stacks *);
 
-int					push_swap(t_stacks *ab);
+int					push_swap(t_stacks *ab, int alg, double d);
 int					sorted(t_stacks *ab);
 int					stack_sorted(t_stack **stack);
 int					arg_check(t_stack *a, char *str);
