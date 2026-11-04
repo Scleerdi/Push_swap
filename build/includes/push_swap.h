@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/04 14:35:42 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/04 16:55:38 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ typedef struct s_stack
 	int				index;
 	struct s_stack	*next;
 }					t_stack;
+
+// typedef	struct s_bench
+// {
+// 	double	d;
+// 	char	*strat;
+// 	int		ops;
+// }					t_bench;
 
 typedef struct s_stacks
 {
@@ -53,6 +60,7 @@ int					push_swap(t_stacks *ab);
 int					sorted(t_stacks *ab);
 int					stack_sorted(t_stack **stack);
 int					arg_check(t_stack *a, char *str);
+int					alg_check(char *str);
 int					find_min(t_stack *stack);
 int					find_min_position(t_stack *stack);
 int					error_delete_all(t_stacks *ab);
