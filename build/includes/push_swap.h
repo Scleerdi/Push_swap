@@ -6,11 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-<<<<<<< HEAD
-/*   Updated: 2026/11/04 16:33:17 by gshabait      ########   odam.nl         */
-=======
-/*   Updated: 2026/11/04 17:04:26 by sicleerd      ########   odam.nl         */
->>>>>>> d1b733cabbd82170a54f68b61a692b046eaac4a0
+/*   Updated: 2026/11/04 17:32:58 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
