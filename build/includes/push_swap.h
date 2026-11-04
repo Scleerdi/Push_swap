@@ -6,11 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-<<<<<<< HEAD
-/*   Updated: 2026/11/03 17:36:53 by sicleerd      ########   odam.nl         */
-=======
-/*   Updated: 2026/11/04 12:53:22 by gshabait      ########   odam.nl         */
->>>>>>> Ghada_simple_algo
+/*   Updated: 2026/11/04 14:08:22 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

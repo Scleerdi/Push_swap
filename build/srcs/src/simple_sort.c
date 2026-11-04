@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/04 12:47:13 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/04 15:20:46 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	find_min(t_stack *stack)
 	int min;
 	
 	if (!stack)
-		return;
+		return ();
 	min	= stack->data;
 	while (stack != NULL)
 	{
