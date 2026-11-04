@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/10 11:58:40 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/04 16:55:33 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/04 17:04:33 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ int	alg_check(char *str)
 		return (2);
 	else if (str == "--complex")
 		return (3);
-	// else if (str == "--bench")
-	// 	return (4);
 	return (0);
 }
 
