@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/03 12:50:28 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/04 12:53:22 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,11 @@ void				ss(t_stacks *ab);
 void				rr(t_stacks *ab);
 void				rrr(t_stacks *ab);
 double				compute_disorder(t_stacks *ab);
+int					find_min(t_stack *stack);
+int					find_min_position(t_stack *stack);
+void				move_min_to_top(t_stacks *ab);
+void				push_min_to_b(t_stacks *ab);
+void				sort_three(t_stacks *ab);
+void				sort_simple(t_stacks *ab);
 
 #endif

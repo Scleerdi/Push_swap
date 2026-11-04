@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/03 17:55:56 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/04 12:47:13 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	move_min_to_top(t_stacks *ab)
 	if (!ab || !ab->a)
 		return;
 	
-	min = find_min(&ab->a);
-	p = find_min_position(&ab->a);
+	min	= find_min(&ab->a);
+	p	= find_min_position(&ab->a);
 	while (ab->a->data != min)
 	{
 		if (p <= ab->size_a / 2)
@@ -81,32 +81,4 @@ void	push_min_to_b(t_stacks *ab)
 	}
 }
 
-void	sort_three(t_stacks *ab)
-{
-	int a;
-	int b;
-	int c;
-
-		if (!ab || !ab->a || ab->size_a != 3)
-		return;
-	a = ab->a->data;
-	b = ab->a->next->data;
-	c = ab->a->next->next->data;
-	if (a > b && b < c && a < c)
-		execute(ab, e_sa);
-	else if (a > b && b > c)
-	{
-		execute(ab, e_sa);
-		execute(ab, e_rra);
-	}
-	else if (a > b && b < c && a > c)
-		execute(ab, e_ra);
-	else if (a < b && b > c && a < c)
-	{
-		execute(ab, e_sa);
-		execute(ab, e_ra);
-	}
-	else if (a < b && b > c && a > c)
-		execute(ab, e_rra);	
-}
 
