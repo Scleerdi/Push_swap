@@ -6,7 +6,11 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
+<<<<<<< HEAD
 /*   Updated: 2026/11/03 17:38:13 by sicleerd      ########   odam.nl         */
+=======
+/*   Updated: 2026/11/04 13:54:25 by gshabait      ########   odam.nl         */
+>>>>>>> Ghada_simple_algo
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +39,13 @@ static int	loop(t_stacks *ab, char *str)
 
 int	push_swap(t_stacks *ab)
 {
+<<<<<<< HEAD
 	normalize(ab->a);
 	chunk_sort(ab);
+=======
+	//normalize(ab->a);
+	sort_simple(ab);
+>>>>>>> Ghada_simple_algo
 	printstacks(ab);
 	return (0);
 }
