@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/04 16:53:56 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 12:36:49 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static int	loop(t_stacks *ab, char *str)
 
 int	push_swap(t_stacks *ab, int alg, double d)
 {
+	ab->bench = benchmark(ab, alg, d);
 	if (alg == 1 || d < 0.2)
 		sort_simple(ab);
 	else if (alg == 2 || (d > 0.2 && d < 0.5))
@@ -43,7 +44,9 @@ int	push_swap(t_stacks *ab, int alg, double d)
 		chunk_sort(ab);
 	}
 	else if (alg == 3 || d > 0.5)
-		radix_sort(ab);
+	{
+		//radix_sort(ab);
+	}
 	printstacks(ab);
 	return (0);
 }
@@ -65,9 +68,9 @@ int	main(int argc, char **argv)
 	alg = 0;
 	while (i > 0)
 	{
-		if (alg_check(argv[i]) != 0)
+		if (alg_check(&ab, argv[i]) != 0)
 		{
-			alg = alg_check(argv[i]);
+			alg = alg_check(&ab, argv[i]);
 			i--;
 		}
 		if (arg_check(ab.a, argv[i]) || loop(&ab, argv[i]))

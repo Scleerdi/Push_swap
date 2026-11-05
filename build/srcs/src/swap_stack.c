@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:27:26 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/20 13:38:33 by scleerdi      ########   odam.nl         */
+/*   Updated: 2026/11/05 12:16:53 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ss(t_stacks *ab)
 void	swap_a(t_stacks *ab)
 {
 	swap_stack(&ab->a);
+	ab->bench->ops[0]++;
 }
 
 void	swap_b(t_stacks *ab)
