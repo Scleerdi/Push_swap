@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 12:20:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/04 14:56:03 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 12:04:14 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	get_position(t_stack *b, int index)
 	**	pushed = 0
 	**	while A is not empty:
 	**	if the top of A has an index below (pushed + chunk):
-	**	pb it
+	**	pb it 
 	**	if the node now on top of B has an index below pushed: rb it
 	**	pushed goes up by one
 	**	otherwise:
