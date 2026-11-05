@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/10 17:53:19 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/27 16:07:19 by scleerdi      ########   odam.nl         */
+/*   Updated: 2026/11/05 14:36:08 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	error_delete_all(t_stacks *ab)
 {
-	del_stacks(&ab->a, &ab->b);
+	del_stacks(ab);
 	ft_putendl_fd("Error", 2);
 	return (1);
 }

@@ -6,11 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-<<<<<<< HEAD
-/*   Updated: 2026/11/05 12:49:23 by sicleerd      ########   odam.nl         */
-=======
-/*   Updated: 2026/11/05 12:36:49 by sicleerd      ########   odam.nl         */
->>>>>>> 91523f7e738690444645b09dc73b0c30121a4de8
+/*   Updated: 2026/11/05 16:15:45 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +35,7 @@ static int	loop(t_stacks *ab, char *str)
 
 int	push_swap(t_stacks *ab, int alg, double d)
 {
-	ab->bench = benchmark(ab, alg, d);
+	ab->bench = benchmark(alg, d);
 	if (alg == 1 || d < 0.2)
 		sort_simple(ab);
 	else if (alg == 2 || (d > 0.2 && d < 0.5))
@@ -72,17 +68,18 @@ int	main(int argc, char **argv)
 	alg = 0;
 	while (i > 0)
 	{
-		if (alg_check(&ab, argv[i]) != 0)
+		printf("alg = %d\nargv[i] = %s\n", alg, argv[i]);
+		if (alg == 0 && alg_check(&ab, argv[i]) != 0)
 		{
 			alg = alg_check(&ab, argv[i]);
 			i--;
 		}
-		if (arg_check(ab.a, argv[i]) || loop(&ab, argv[i]))
+		if (alg == 0 && (arg_check(ab.a, argv[i]) || loop(&ab, argv[i])))
 			return (error_delete_all(&ab));
 		i--;
 	}
 	if (ab.size_a != 0 && sorted(&ab) == 0)
 		push_swap(&ab, alg, compute_disorder(&ab));
-	del_stacks(&ab.a, &ab.b);
+	del_stacks(&ab);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/10 11:58:40 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/05 12:50:15 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 16:03:09 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ static int	is_int(char *str)
 
 int	alg_check(t_stacks *ab, char *str)
 {
-	if (str == "--simple")
+	if (!ft_strncmp(str, "--simple", ft_strlen(str)))
 		return (1);
-	else if (str == "--medium")
+	else if (!ft_strncmp(str, "--medium", ft_strlen(str)))
 		return (2);
-	else if (str == "--complex")
+	else if (!ft_strncmp(str, "--complex", ft_strlen(str)))
 		return (3);
-	else if (str == "--bench")
+	else if (!ft_strncmp(str, "--bench", ft_strlen(str)))
 	{
 		ab->bench->fd = 1;
 		return (4);

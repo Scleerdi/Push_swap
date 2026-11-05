@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/05 12:50:09 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 16:02:08 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -70,8 +71,8 @@ int					value_exists(t_stack *a, int data);
 char				*read_line(int fd);
 void				execute(t_stacks *ab, t_op operation);
 void				execute_c(t_stacks *ab, t_op operation);
-void				del_stacks(t_stack **astack_a, t_stack **astack_b);
-void				dup_stack(t_stacks const *ab, t_stacks *dup_ab);
+void				del_stacks(t_stacks *ab);
+//void				dup_stack(t_stacks const *ab, t_stacks *dup_ab);
 void				printstacks(t_stacks *ab);
 void				normalize(t_stack *a);
 void				push_a(t_stacks *ab);
@@ -92,6 +93,6 @@ void				sort_three(t_stacks *ab);
 void				sort_simple(t_stacks *ab);
 double				compute_disorder(t_stacks *ab);
 t_stack				*create_node(int data);
-t_bench				*benchmark(t_stacks *ab, int alg, double d);
+t_bench				*benchmark(int alg, double d);
 
 #endif
