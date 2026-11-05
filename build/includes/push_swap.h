@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/04 17:46:04 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 12:49:10 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,21 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+typedef	struct s_bench
+{
+	double	d;
+	int		alg;
+	int		ops[11];
+	int		fd;
+}					t_bench;
+
 typedef struct s_stacks
 {
 	int				size_a;
 	int				size_b;
 	t_stack			*a;
 	t_stack			*b;
+	t_bench			*bench;
 }					t_stacks;
 
 # define OP_COUNT 11
@@ -53,7 +62,7 @@ int					push_swap(t_stacks *ab, int alg, double d);
 int					sorted(t_stacks *ab);
 int					stack_sorted(t_stack **stack);
 int					arg_check(t_stack *a, char *str);
-int					alg_check(char *str);
+int					alg_check(t_stacks *ab, char *str);
 int					find_min(t_stack *stack);
 int					find_min_position(t_stack *stack);
 int					error_delete_all(t_stacks *ab);
@@ -83,6 +92,6 @@ void				sort_three(t_stacks *ab);
 void				sort_simple(t_stacks *ab);
 double				compute_disorder(t_stacks *ab);
 t_stack				*create_node(int data);
-void				push_stack(t_stack **dst, t_stack **src);
+t_bench				*benchmark(t_stacks *ab, int alg, double d);
 
 #endif
