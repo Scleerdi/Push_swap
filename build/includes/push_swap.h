@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/05 12:49:10 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 17:22:09 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ void				move_min_to_top(t_stacks *ab);
 void				push_min_to_b(t_stacks *ab);
 void				sort_three(t_stacks *ab);
 void				sort_simple(t_stacks *ab);
+void				benchmark(t_stacks *ab, int alg, double d);
 double				compute_disorder(t_stacks *ab);
 t_stack				*create_node(int data);
-t_bench				*benchmark(t_stacks *ab, int alg, double d);
 
 #endif
