@@ -6,11 +6,12 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/04 15:03:18 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 17:05:19 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft.h"
 
 /*
 **	gets fed the arguments from the main
@@ -51,6 +52,8 @@ int	main(int argc, char **argv)
 	int			i;
 	t_stacks	ab;
 
+	ft_printf("Testing our printf: %d %s \n", 42 , "Still alive");
+	
 	ft_bzero(&ab, sizeof(t_stacks));
 	i = argc - 1;
 	ab.size_a = argc - 1;

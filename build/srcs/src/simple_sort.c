@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/05 12:30:08 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/05 16:49:24 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	find_min(t_stack *stack)
 	int	min;
 
 	if (!stack)
-		return ;
+		return (0);
 	min = stack->data;
 	while (stack != NULL)
 	{
@@ -65,8 +65,8 @@ void	move_min_to_top(t_stacks *ab)
 
 	if (!ab || !ab->a)
 		return ;
-	min = find_min(&ab->a);
-	p = find_min_position(&ab->a);
+	min = find_min(ab->a);
+	p = find_min_position(ab->a);
 	while (ab->a->data != min)
 	{
 		if (p <= ab->size_a / 2)
