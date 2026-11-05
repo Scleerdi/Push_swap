@@ -6,11 +6,12 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/05 17:22:27 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 17:43:23 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 /*
 **	gets fed the arguments from the main
@@ -36,8 +37,11 @@ static int	loop(t_stacks *ab, char *str)
 int	push_swap(t_stacks *ab, int alg, double d)
 {
 	benchmark(ab, alg, d);
-	if (alg == 1 || d < 0.2)
-		sort_simple(ab);
+	if (alg == 1 || d <= 0.2)
+		{
+			printf("%s\n", "This is simple");
+			sort_simple(ab);
+		}
 	else if (alg == 2 || (d > 0.2 && d < 0.5))
 	{
 		normalize(ab->a);
