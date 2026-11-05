@@ -6,11 +6,15 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 18:01:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/04 15:04:23 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 12:31:32 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+/*
+	5. Sorting the remaining three integers
+	6. Pushing everything back to stack A
+*/
 
 void	sort_three(t_stacks *ab)
 {
