@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/06 16:31:28 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/06 17:08:17 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ int	push_swap(t_stacks *ab, int alg, double d)
 {
 	benchmark(ab, alg, d);
 	normalize(ab->a);
-	if (alg == 1 || d <= 0.2)
+	if (alg == 1 && d <= 0.2)
 	{
 		ab->bench->path = 1;
 		sort_simple(ab);
 	}
-	else if (alg == 2 || (d > 0.2 && d <= 0.5))
+	else if (alg == 2 && (d > 0.2 && d <= 0.5))
 	{
 		ab->bench->path = 2;
 		chunk_sort(ab);
 	}
-	else if (alg == 3 || d > 0.5)
+	else if (alg == 3 && d > 0.5)
 	{
 		ab->bench->path = 3;
 		//radix_sort(ab);
