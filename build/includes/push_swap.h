@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/06 14:05:23 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/06 16:13:58 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ typedef struct s_stack
 
 typedef	struct s_bench
 {
+	int		fd;
 	double	d;
 	int		alg;
+	int		path;
 	int		ops[11];
-	int		fd;
 }					t_bench;
 
 typedef struct s_stacks
@@ -92,6 +93,7 @@ void				push_min_to_b(t_stacks *ab);
 void				sort_three(t_stacks *ab);
 void				sort_simple(t_stacks *ab);
 void				benchmark(t_stacks *ab, int alg, double d);
+void				print_b(t_stacks *ab);
 double				compute_disorder(t_stacks *ab);
 t_stack				*create_node(int data);
 
