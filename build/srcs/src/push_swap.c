@@ -6,11 +6,12 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/06 16:14:59 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/06 16:31:28 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 /*
 **	gets fed the arguments from the main

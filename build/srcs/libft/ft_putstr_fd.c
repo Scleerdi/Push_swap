@@ -6,20 +6,13 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/09/30 13:46:06 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/09/30 13:47:51 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/06 16:07:48 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	return (write(fd, s, ft_strlen(s)));
 }
