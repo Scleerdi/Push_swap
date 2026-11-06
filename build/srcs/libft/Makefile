@@ -6,7 +6,7 @@
 #    By: sicleerd <sicleerd@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/09/28 16:47:01 by sicleerd      #+#    #+#                  #
-#    Updated: 2026/11/03 14:08:16 by sicleerd      ########   odam.nl          #
+#    Updated: 2026/11/06 14:05:45 by gshabait      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SOURCE =	isalpha isdigit isalnum isascii isprint strlen memset bzero \
 			substr strjoin strtrim split itoa strmapi striteri \
 			putchar_fd putstr_fd putendl_fd putnbr_fd \
 			lstnew lstadd_front lstadd_back lstsize lstlast lstdelone \
-			lstclear lstiter lstmap \
+			lstclear lstiter lstmap printf printbase \
 			sqrt
 SOURCE := $(SOURCE:%=ft_%.c)
 OBJECT := $(SOURCE:%.c=%.o)

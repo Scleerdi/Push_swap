@@ -6,7 +6,7 @@
 #    By: sicleerd <sicleerd@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/10/30 13:58:46 by sicleerd      #+#    #+#                  #
-#    Updated: 2026/11/05 17:23:00 by sicleerd      ########   odam.nl          #
+#    Updated: 2026/11/06 12:59:33 by gshabait      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 SRC_COMMON	= arg_check create_node del_stacks dup_stack error_delete_all \
 			execute printstacks push_stack reverse_rotate_stack \
 			rotate_stack sorted stack_sorted swap_stack disorder \
-			normalize chunk_sort bench_mode simple_sort simple_sort_imp
+			normalize chunk_sort bench_mode simple_sort simple_sort_imp 
 
 # Sources used by only one program (each one holds that program's main).
 SRC_P		= push_swap
