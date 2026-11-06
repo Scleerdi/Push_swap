@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/05 16:15:45 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/06 14:04:56 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	loop(t_stacks *ab, char *str)
 
 int	push_swap(t_stacks *ab, int alg, double d)
 {
-	ab->bench = benchmark(alg, d);
+	benchmark(ab, alg, d);
 	if (alg == 1 || d < 0.2)
 		sort_simple(ab);
 	else if (alg == 2 || (d > 0.2 && d < 0.5))
