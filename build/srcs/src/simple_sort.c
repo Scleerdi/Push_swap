@@ -6,11 +6,17 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/04 16:42:07 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/05 17:50:15 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+/*
+	1. finding the min value
+	2. finding it's position in the linked list
+	3. Rotating the min to the top using ra or rra
+	4. pushing the min to stack B
+*/
 
 int	find_min(t_stack *stack)
 {
@@ -35,7 +41,7 @@ int	find_min_position(t_stack *stack)
 	int	i;
 
 	if (!stack)
-		return (-1); //not index? no idea but then again these comments are wrong 
+		return (-1);
 	position = 0;
 	i = 0;
 	min = stack->data;
