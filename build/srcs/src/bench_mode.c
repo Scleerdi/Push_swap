@@ -31,7 +31,7 @@ void	benchmark(t_stacks *ab, int alg, double d)
 	i = 0;
 	while (i < 11)
 	{
-		ab->bench->ops[i] = 0;
+		bench->ops[i] = 0;
 		i++;
 	}
 	ab->bench = bench;

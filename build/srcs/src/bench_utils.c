@@ -54,7 +54,7 @@ void	total_ops(int *ops, int fd)
 
 	i = 11;
 	total_ops = 0;
-	while (i > 0)
+	while (i >= 0)
 	{
 		total_ops += ops[i];
 		i--;
