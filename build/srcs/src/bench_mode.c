@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 12:35:31 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/06 18:04:28 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 11:58:45 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_b(t_stacks *ab)
 {
 	print_percent(ab->bench->d, ab->bench->fd);
-	print_strat(ab->bench->alg, ab->bench->path ,ab->bench->fd);
+	print_strat(ab->bench->alg, ab->bench->path, ab->bench->fd);
 	print_ops(ab->bench->ops, ab->bench->fd);
 }
 

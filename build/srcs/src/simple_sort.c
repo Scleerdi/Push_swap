@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/05 17:50:15 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 11:56:38 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	move_min_to_top(t_stacks *ab)
 	int	min;
 
 	if (!ab || !ab->a)
-		return;
+		return ;
 	min = find_min(ab->a);
 	p = find_min_position(ab->a);
 	while (ab->a->data != min)

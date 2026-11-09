@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/06 17:08:17 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 11:57:29 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	push_swap(t_stacks *ab, double d)
 		sort_simple(ab);
 	else if (alg == 2)
 		chunk_sort(ab);
-	// else
-	// radix_sort(ab);
+	else
+		ft_putendl_fd("this is where radix would be", 1);
 	if (ab->bench->on)
 		print_b(ab);
 	return (0);

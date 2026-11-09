@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/06 16:33:53 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/06 17:39:39 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 11:56:05 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	print_percent(double disorder, int fd)
 
 void	total_ops(int *ops, int fd)
 {
-	int total_ops;
-	int i;
+	int	total_ops;
+	int	i;
 
 	i = 11;
 	total_ops = 0;
