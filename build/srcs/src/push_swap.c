@@ -27,6 +27,7 @@ static int	loop(t_stacks *ab, char *str)
 		return (1);
 	current->next = ab->a;
 	ab->a = current;
+	ab->size_a++;
 	return (0);
 }
 
@@ -34,58 +35,62 @@ static int	loop(t_stacks *ab, char *str)
 ** Picks an algorithim based on alg or disorder
 */
 
-int	push_swap(t_stacks *ab, int alg, double d)
+static int	adaptive_pick(double d)
 {
-	benchmark(ab, alg, d);
+	if (d <= 0.2)
+		return (1);
+	if (d <= 0.5)
+		return (2);
+	return (3);
+}
+
+int	push_swap(t_stacks *ab, double d)
+{
+	int	alg;
+
+	ab->bench->d = d;
+	alg = ab->bench->alg;
+	if (alg == 0)
+		alg = adaptive_pick(d);
+	ab->bench->path = alg;
 	normalize(ab->a);
-	if (alg == 1 && d <= 0.2)
-	{
-		ab->bench->path = 1;
+	if (alg == 1)
 		sort_simple(ab);
-	}
-	else if (alg == 2 && (d > 0.2 && d <= 0.5))
-	{
-		ab->bench->path = 2;
+	else if (alg == 2)
 		chunk_sort(ab);
-	}
-	else if (alg == 3 && d > 0.5)
-	{
-		ab->bench->path = 3;
-		//radix_sort(ab);
-	}
-	print_b(ab);
-	printstacks(ab);
+	// else
+	// radix_sort(ab);
+	if (ab->bench->on)
+		print_b(ab);
 	return (0);
 }
 
-/*
-** initiates the struckt that holds stacks A and B
-** checks for duplicate input and non numerical imput
-*/
+static int	parse_args(t_stacks *ab, int argc, char **argv)
+{
+	int	i;
+
+	i = argc - 1;
+	while (i > 0)
+	{
+		if (!alg_check(ab, argv[i])
+			&& (arg_check(ab->a, argv[i]) || loop(ab, argv[i])))
+			return (1);
+		i--;
+	}
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
-	int			i;
-	int			alg;
 	t_stacks	ab;
 
 	ft_bzero(&ab, sizeof(t_stacks));
-	i = argc - 1;
-	ab.size_a = argc - 1;
-	alg = 0;
-	while (i > 0)
-	{
-		if (alg == 0 && alg_check(&ab, argv[i]) != 0)
-		{
-			alg = alg_check(&ab, argv[i]);
-			i--;
-		}
-		if (alg == 0 && (arg_check(ab.a, argv[i]) || loop(&ab, argv[i])))
-			return (error_delete_all(&ab));
-		i--;
-	}
+	ab.bench = ft_calloc(1, sizeof(t_bench));
+	if (!ab.bench || parse_args(&ab, argc, argv))
+		return (error_delete_all(&ab));
+	ab.bench->fd = 2;
 	if (ab.size_a != 0 && sorted(&ab) == 0)
-		push_swap(&ab, alg, compute_disorder(&ab));
+		push_swap(&ab, compute_disorder(&ab));
 	del_stacks(&ab);
 	return (0);
 }

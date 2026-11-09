@@ -29,6 +29,7 @@ typedef	struct s_bench
 	double	d;
 	int		alg;
 	int		path;
+	int		on;
 	int		ops[12];
 }					t_bench;
 
@@ -60,7 +61,7 @@ typedef enum e_op
 
 typedef void	(*t_operation)(t_stacks *);
 
-int					push_swap(t_stacks *ab, int alg, double d);
+int					push_swap(t_stacks *ab, double d);
 int					sorted(t_stacks *ab);
 int					stack_sorted(t_stack **stack);
 int					arg_check(t_stack *a, char *str);

@@ -60,18 +60,19 @@ static int	is_int(char *str)
 
 int	alg_check(t_stacks *ab, char *str)
 {
-	if (!ft_strncmp(str, "--simple", ft_strlen(str)))
-		return (1);
-	else if (!ft_strncmp(str, "--medium", ft_strlen(str)))
-		return (2);
-	else if (!ft_strncmp(str, "--complex", ft_strlen(str)))
-		return (3);
-	else if (!ft_strncmp(str, "--bench", ft_strlen(str)))
-	{
-		ab->bench->fd = 1;
-		return (4);
-	}
-	return (0);
+	if (!ft_strncmp(str, "--simple", 9))
+		ab->bench->alg = 1;
+	else if (!ft_strncmp(str, "--medium", 9))
+		ab->bench->alg = 2;
+	else if (!ft_strncmp(str, "--complex", 10))
+		ab->bench->alg = 3;
+	else if (!ft_strncmp(str, "--adaptive", 11))
+		ab->bench->alg = 0;
+	else if (!ft_strncmp(str, "--bench", 8))
+		ab->bench->on = 1;
+	else
+		return (0);
+	return (1);
 }
 
 int	arg_check(t_stack *a, char *str)
