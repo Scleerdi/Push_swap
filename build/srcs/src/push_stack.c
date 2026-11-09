@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:48 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/06 16:52:06 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 12:08:56 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	push_stack(t_stack **dst, t_stack **src)
 		*dst = *src;
 		*src = (*src)->next;
 		(*dst)->next = temp;
-		(*dst)->next->next = temp->next;
 	}
 }
 

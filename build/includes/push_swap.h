@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/09 11:58:06 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 12:06:43 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,7 @@ void				move_min_to_top(t_stacks *ab);
 void				push_min_to_b(t_stacks *ab);
 void				sort_three(t_stacks *ab);
 void				sort_simple(t_stacks *ab);
-void				benchmark(t_stacks *ab, int alg, double d);
-void				print_b(t_stacks *ab);
-void				print_ops(int *ops, int fd);
-void				print_percent(double disorder, int fd);
-void				print_strat(int alg, int path, int fd);
+void				push_stack(t_stack **dst, t_stack **src);
 double				compute_disorder(t_stacks *ab);
 t_stack				*create_node(int data);
 
