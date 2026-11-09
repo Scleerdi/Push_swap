@@ -6,11 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/14 16:51:44 by gshabait      #+#    #+#                 */
-<<<<<<< HEAD
-/*   Updated: 2026/11/06 14:24:25 by gshabait      ########   odam.nl         */
-=======
-/*   Updated: 2026/11/05 12:53:03 by gshabait      ########   odam.nl         */
->>>>>>> 80f7be8 (I don't knnow)
+/*   Updated: 2026/11/09 12:14:15 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

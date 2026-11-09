@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/09 12:06:20 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 12:16:30 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,6 @@ int	main(int argc, char **argv)
 {
 	t_stacks	ab;
 
-	ft_printf("Testing our printf: %d %s \n", 42 , "Still alive");
-	
 	ft_bzero(&ab, sizeof(t_stacks));
 	ab.bench = ft_calloc(1, sizeof(t_bench));
 	if (!ab.bench || parse_args(&ab, argc, argv))

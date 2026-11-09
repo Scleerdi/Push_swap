@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 18:01:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/05 17:23:39 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/09 12:17:27 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_three(t_stacks *ab)
 	int	c;
 
 	if (!ab || !ab->a || ab->size_a != 3)
-		return;
+		return ;
 	a = ab->a->data;
 	b = ab->a->next->data;
 	c = ab->a->next->next->data;

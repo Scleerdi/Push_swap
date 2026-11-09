@@ -6,11 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/09/28 14:16:25 by sicleerd      #+#    #+#                 */
-<<<<<<< HEAD
-/*   Updated: 2026/11/06 16:05:46 by gshabait      ########   odam.nl         */
-=======
-/*   Updated: 2026/11/05 16:53:45 by gshabait      ########   odam.nl         */
->>>>>>> 80f7be8 (I don't knnow)
+/*   Updated: 2026/11/09 12:15:47 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +34,9 @@ int				ft_atoi(const char *str);
 int				ft_strlen(const char *str);
 int				ft_strncmp(const char *s1, const char *s2, unsigned int n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
-<<<<<<< HEAD
-int				ft_printf(const char *format, ...);
-int				ft_printbase(unsigned long n, char *base);
-int				ft_putchar_fd(char c, int fd);
-int				ft_putstr_fd(char *s, int fd);
-=======
 int				ft_putchar_fd(char c, int fd);
 int				ft_putstr_fd(char *s, int fd);
 int				ft_printbase(unsigned long n, char *base);
->>>>>>> 80f7be8 (I don't knnow)
 char			*ft_itoa(int n);
 char			ft_tolower(int x);
 char			ft_toupper(int x);
