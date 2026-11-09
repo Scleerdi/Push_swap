@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 12:35:31 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/06 17:44:42 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/06 18:04:28 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	benchmark(t_stacks *ab, int alg, double d)
 	i = 0;
 	while (i < 11)
 	{
-		ab->bench->ops[i] = 0;
+		bench->ops[i] = 0;
 		i++;
 	}
 	ab->bench = bench;
