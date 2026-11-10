@@ -6,19 +6,25 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/04 14:40:08 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/09 16:52:19 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/10 12:59:32 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	max_bits(int n)
+static int	max_bits(int size)
 {
-	// start with bits = 0
-	// while the largest rank (n - 1) still has bits left when shifted right by "bits":
-	//     bits goes up by one
-	// return bits
+	int bits;
+	int max;
 	
+	bits	= 0;
+	max 	= size - 1;  
+	while ( max > 0)
+	 {
+		max = max >> 1;	
+		bits++;
+	 }
+	return (bits);	
 }
 
 static void	sort_bit(t_stacks *ab, int bit)
@@ -37,7 +43,7 @@ void	radix_sort(t_stacks *ab)
 	int bit;
 	int size;
 
-	size	= ab->size_a;
+	size	= max_bits(ab->size_a);
 	bit		= 0;
 	while(bit < 3)
 	{
