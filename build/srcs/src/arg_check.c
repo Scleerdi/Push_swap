@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/10 11:58:40 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/18 15:49:46 by scleerdi      ########   odam.nl         */
+/*   Updated: 2026/11/06 14:05:08 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,23 @@ static int	is_int(char *str)
 /*
 **	Returns 1 if str is not a valid int or is a duplicate, else 0
 */
+
+int	alg_check(t_stacks *ab, char *str)
+{
+	if (!ft_strncmp(str, "--simple", 9))
+		ab->bench->alg = 1;
+	else if (!ft_strncmp(str, "--medium", 9))
+		ab->bench->alg = 2;
+	else if (!ft_strncmp(str, "--complex", 10))
+		ab->bench->alg = 3;
+	else if (!ft_strncmp(str, "--adaptive", 11))
+		ab->bench->alg = 0;
+	else if (!ft_strncmp(str, "--bench", 8))
+		ab->bench->on = 1;
+	else
+		return (0);
+	return (1);
+}
 
 int	arg_check(t_stack *a, char *str)
 {

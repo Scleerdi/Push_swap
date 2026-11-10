@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/04 14:40:08 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/04 15:04:52 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 16:52:19 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	max_bits(int n)
 	// while the largest rank (n - 1) still has bits left when shifted right by "bits":
 	//     bits goes up by one
 	// return bits
+	
 }
 
 static void	sort_bit(t_stacks *ab, int bit)
@@ -32,7 +33,25 @@ static void	sort_bit(t_stacks *ab, int bit)
 
 void	radix_sort(t_stacks *ab)
 {
-	// work out how many bits we need (max_bits of size_a)
-	// for each bit, from 0 up to that number:
-	//     sort_bit on that bit
+	int i;
+	int bit;
+	int size;
+
+	size	= ab->size_a;
+	bit		= 0;
+	while(bit < 3)
+	{
+		i = 0;
+		while(i < size)
+		{
+			if(((ab->a->index >> bit) & 1) == 0)
+				execute(ab, e_pb);
+			else
+				execute(ab, e_ra);
+			i++;
+		}
+		while (ab->size_b > 0)
+			execute(ab, e_pa);
+		bit++;		
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/06 16:31:25 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/04 14:58:12 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/05 14:39:03 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,13 +133,13 @@ int	main(int argc, char **argv)
 	{
 		if (loop(&ab, argv[i]) == 1)
 		{
-			del_stacks(&ab.a, &ab.b);
+			del_stacks(&ab);
 			return (1);
 		}
 		i--;
 	}
 	printstacks(&ab);
 	ret = declare(&ab);
-	del_stacks(&ab.a, &ab.b);
+	del_stacks(&ab);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 #    By: sicleerd <sicleerd@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/10/30 13:58:46 by sicleerd      #+#    #+#                  #
-#    Updated: 2026/11/05 16:43:14 by gshabait      ########   odam.nl          #
+#    Updated: 2026/11/09 13:57:11 by gshabait      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LIBFT_DIR	= srcs/libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
 # Sources used by BOTH programs. A new shared .c file goes here, nowhere else.
-SRC_COMMON	= arg_check create_node del_stacks dup_stack error_delete_all \
+SRC_COMMON	= arg_check create_node del_stacks error_delete_all \
 			execute printstacks push_stack reverse_rotate_stack \
 			rotate_stack sorted stack_sorted swap_stack disorder \
 			normalize chunk_sort simple_sort simple_sort_imp

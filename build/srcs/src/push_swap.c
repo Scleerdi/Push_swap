@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/05 17:05:19 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/09 13:56:03 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,47 +27,72 @@ static int	loop(t_stacks *ab, char *str)
 		return (1);
 	current->next = ab->a;
 	ab->a = current;
+	ab->size_a++;
 	return (0);
 }
 
 /*
-** Picks an algorithim based on stack A size
+** Picks an algorithim based on alg or disorder
 */
 
-int	push_swap(t_stacks *ab)
+static int	adaptive_pick(double d)
 {
+	if (d <= 0.2)
+		return (1);
+	if (d <= 0.5)
+		return (2);
+	return (3);
+}
+
+int	push_swap(t_stacks *ab, double d)
+{
+	int	alg;
+
+	ab->bench->d = d;
+	alg = ab->bench->alg;
+	if (alg == 0)
+		alg = adaptive_pick(d);
+	ab->bench->path = alg;
 	normalize(ab->a);
-	sort_simple(ab);
-	printstacks(ab);
+	if (alg == 1)
+		sort_simple(ab);
+	else if (alg == 2)
+		chunk_sort(ab);
+	else
+		ft_putendl_fd("this is where radix would be", 1);
+	if (ab->bench->on)
+		print_b(ab);
 	return (0);
 }
 
-/*
-** initiates the struckt that holds stacks A and B
-** checks for duplicate input and non numerical imput
-*/
+static int	parse_args(t_stacks *ab, int argc, char **argv)
+{
+	int	i;
+
+	i = argc - 1;
+	while (i > 0)
+	{
+		if (!alg_check(ab, argv[i])
+			&& (arg_check(ab->a, argv[i]) || loop(ab, argv[i])))
+			return (1);
+		i--;
+	}
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
-	int			i;
 	t_stacks	ab;
 
 	ft_printf("Testing our printf: %d %s \n", 42 , "Still alive");
 	
 	ft_bzero(&ab, sizeof(t_stacks));
-	i = argc - 1;
-	ab.size_a = argc - 1;
-	while (i > 0)
-	{
-		if (arg_check(ab.a, argv[i]) || loop(&ab, argv[i]))
-			return (error_delete_all(&ab));
-		i--;
-	}
+	ab.bench = ft_calloc(1, sizeof(t_bench));
+	if (!ab.bench || parse_args(&ab, argc, argv))
+		return (error_delete_all(&ab));
+	ab.bench->fd = 2;
 	if (ab.size_a != 0 && sorted(&ab) == 0)
-	{
-		compute_disorder(&ab);
-		push_swap(&ab);
-	}
-	del_stacks(&ab.a, &ab.b);
+		push_swap(&ab, compute_disorder(&ab));
+	del_stacks(&ab);
 	return (0);
 }

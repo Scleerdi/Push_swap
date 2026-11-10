@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/05 16:49:24 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/09 13:56:12 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	move_min_to_top(t_stacks *ab)
 		else
 			execute(ab, e_rra);
 	}
-	push_stack(&ab->b, &ab->a);
 }
 
 void	push_min_to_b(t_stacks *ab)

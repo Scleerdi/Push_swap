@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:27:13 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/20 13:00:29 by scleerdi      ########   odam.nl         */
+/*   Updated: 2026/11/06 16:50:12 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,21 @@ static	void	rotate_stack(t_stack **stack, int size)
 
 void	rr(t_stacks *ab)
 {
+	ab->bench->ops[4]--;
+	ab->bench->ops[5]--;
+	ab->bench->ops[6]++;
 	rotate_a(ab);
 	rotate_b(ab);
 }
 
 void	rotate_a(t_stacks *ab)
 {
+	ab->bench->ops[4]++;
 	rotate_stack(&ab->a, ab->size_a);
 }
 
 void	rotate_b(t_stacks *ab)
 {
+	ab->bench->ops[5]++;
 	rotate_stack(&ab->b, ab->size_b);
 }

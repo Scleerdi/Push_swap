@@ -6,13 +6,13 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 12:35:11 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/03 12:38:07 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/09 16:04:59 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	normalize(t_stack *a)
+void	steve(t_stack *a)
 {
 	t_stack	*i;
 	t_stack	*j;

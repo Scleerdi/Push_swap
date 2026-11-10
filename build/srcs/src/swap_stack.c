@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:27:26 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/20 13:38:33 by scleerdi      ########   odam.nl         */
+/*   Updated: 2026/11/06 16:50:40 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,21 @@ static	void	swap_stack(t_stack **stack)
 
 void	ss(t_stacks *ab)
 {
+	ab->bench->ops[0]--;
+	ab->bench->ops[1]--;
+	ab->bench->ops[2]++;
 	swap_a(ab);
 	swap_b(ab);
 }
 
 void	swap_a(t_stacks *ab)
 {
+	ab->bench->ops[0]++;
 	swap_stack(&ab->a);
 }
 
 void	swap_b(t_stacks *ab)
 {
+	ab->bench->ops[1]++;
 	swap_stack(&ab->b);
 }

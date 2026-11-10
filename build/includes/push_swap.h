@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/05 16:47:17 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/09 15:59:26 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -22,12 +23,23 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+typedef struct s_bench
+{
+	int		fd;
+	double	d;
+	int		alg;
+	int		path;
+	int		on;
+	int		ops[12];
+}					t_bench;
+
 typedef struct s_stacks
 {
 	int				size_a;
 	int				size_b;
 	t_stack			*a;
 	t_stack			*b;
+	t_bench			*bench;
 }					t_stacks;
 
 # define OP_COUNT 11
@@ -49,10 +61,11 @@ typedef enum e_op
 
 typedef void	(*t_operation)(t_stacks *);
 
-int					push_swap(t_stacks *ab);
+int					push_swap(t_stacks *ab, double d);
 int					sorted(t_stacks *ab);
 int					stack_sorted(t_stack **stack);
 int					arg_check(t_stack *a, char *str);
+int					alg_check(t_stacks *ab, char *str);
 int					find_min(t_stack *stack);
 int					find_min_position(t_stack *stack);
 int					error_delete_all(t_stacks *ab);
@@ -60,8 +73,8 @@ int					value_exists(t_stack *a, int data);
 char				*read_line(int fd);
 void				execute(t_stacks *ab, t_op operation);
 void				execute_c(t_stacks *ab, t_op operation);
-void				del_stacks(t_stack **astack_a, t_stack **astack_b);
-void				dup_stack(t_stacks const *ab, t_stacks *dup_ab);
+void				del_stacks(t_stacks *ab);
+//void				dup_stack(t_stacks const *ab, t_stacks *dup_ab);
 void				printstacks(t_stacks *ab);
 void				normalize(t_stack *a);
 void				push_a(t_stacks *ab);
