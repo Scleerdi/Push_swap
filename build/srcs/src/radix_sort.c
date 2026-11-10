@@ -6,18 +6,19 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/04 14:40:08 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/10 12:59:32 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/10 14:52:20 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	max_bits(int size)
+/* calculates how many binary bits we need to examine */
+static int	max_bits(int size) 
 {
 	int bits;
-	int max;
+	int max; //largest  normalized index
 	
-	bits	= 0;
+	bits	= 0; //counts how many binary positions are needed to represent that index
 	max 	= size - 1;  
 	while ( max > 0)
 	 {
@@ -37,6 +38,8 @@ static void	sort_bit(t_stacks *ab, int bit)
 	// while B is not empty: pa
 }
 
+/* use the bits we calculated to sort the numbers in stack A */
+
 void	radix_sort(t_stacks *ab)
 {
 	int i;
@@ -45,7 +48,7 @@ void	radix_sort(t_stacks *ab)
 
 	size	= max_bits(ab->size_a);
 	bit		= 0;
-	while(bit < 3)
+	while(bit < size)
 	{
 		i = 0;
 		while(i < size)
