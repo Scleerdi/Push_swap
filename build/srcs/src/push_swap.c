@@ -6,12 +6,11 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/09 13:56:03 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/10 14:36:29 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 /*
 **	gets fed the arguments from the main
@@ -59,7 +58,7 @@ int	push_swap(t_stacks *ab, double d)
 	else if (alg == 2)
 		chunk_sort(ab);
 	else
-		ft_putendl_fd("this is where radix would be", 1);
+		radix_sort(ab);
 	if (ab->bench->on)
 		print_b(ab);
 	return (0);
@@ -83,8 +82,6 @@ static int	parse_args(t_stacks *ab, int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_stacks	ab;
-
-	ft_printf("Testing our printf: %d %s \n", 42 , "Still alive");
 	
 	ft_bzero(&ab, sizeof(t_stacks));
 	ab.bench = ft_calloc(1, sizeof(t_bench));

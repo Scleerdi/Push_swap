@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/10 12:29:12 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/10 14:41:18 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,11 @@ int					find_min_position(t_stack *stack);
 int					error_delete_all(t_stacks *ab);
 int					value_exists(t_stack *a, int data);
 char				*read_line(int fd);
+void				radix_sort(t_stacks *ab);
+void				print_b(t_stacks *ab);
+void				print_strat(int alg, int path, int fd);
+void				print_percent(double disorder, int fd);
+void				print_ops(int *ops, int fd);
 void				execute(t_stacks *ab, t_op operation);
 void				execute_c(t_stacks *ab, t_op operation);
 void				del_stacks(t_stacks *ab);
