@@ -6,14 +6,15 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/04 14:40:08 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/10 17:01:52 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/10 17:04:31 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* calculates how many binary bits we need to examine */
-static int	max_bits(int size) 
+
+static int	max_bits(int size)
 {
 	int	bits;
 

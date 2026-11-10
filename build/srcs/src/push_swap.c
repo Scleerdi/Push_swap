@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/10 14:36:29 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/10 17:04:44 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static int	parse_args(t_stacks *ab, int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_stacks	ab;
-	
+
 	ft_bzero(&ab, sizeof(t_stacks));
 	ab.bench = ft_calloc(1, sizeof(t_bench));
 	if (!ab.bench || parse_args(&ab, argc, argv))
