@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/06 16:31:25 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/05 14:39:03 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/11 12:56:13 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,9 @@ int	main(int argc, char **argv)
 	ft_bzero(&ab, sizeof(t_stacks));
 	i = argc - 1;
 	ab.size_a = argc - 1;
+	ab.bench = ft_calloc(1, sizeof(t_bench));
+	if (!ab.bench)
+		return (1);
 	while (i > 0)
 	{
 		if (loop(&ab, argv[i]) == 1)
@@ -138,7 +141,7 @@ int	main(int argc, char **argv)
 		}
 		i--;
 	}
-	printstacks(&ab);
+	//printstacks(&ab);
 	ret = declare(&ab);
 	del_stacks(&ab);
 	return (ret);
