@@ -6,15 +6,16 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/10 17:04:44 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/12 12:51:50 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	gets fed the arguments from the main
-**	converts the arguments into stack A data nodes
+1. converts args into int and create new node
+2. adds the node to the top of stack A and updates it's size
+3. return 1 if allocations fails, otherwise 0
 */
 
 static int	loop(t_stacks *ab, char *str)
@@ -43,6 +44,11 @@ static int	adaptive_pick(double d)
 	return (3);
 }
 
+/*
+1. select and run the alg based on the chosen option or disorder value
+2. normalize the stack
+3. print benchmark if on
+*/
 int	push_swap(t_stacks *ab, double d)
 {
 	int	alg;
@@ -50,20 +56,38 @@ int	push_swap(t_stacks *ab, double d)
 	ab->bench->d = d;
 	alg = ab->bench->alg;
 	if (alg == 0)
-		alg = adaptive_pick(d);
+	{
+		if (ab->size_a <= 5)
+			alg = 1;
+		else
+			alg = adaptive_pick(d);
+	}
 	ab->bench->path = alg;
 	normalize(ab->a);
 	if (alg == 1)
-		sort_simple(ab);
+		{
+			ft_printf("%s\n", "This is simple");
+			sort_simple(ab);
+		}	
 	else if (alg == 2)
+	{
+		ft_printf("%s\n", "This is chunck");
 		chunk_sort(ab);
+	}
 	else
+	{
+		ft_printf("%s\n", "This is radix");
 		radix_sort(ab);
+	}
 	if (ab->bench->on)
 		print_b(ab);
 	return (0);
 }
-
+/*
+1. check & process the arguments from last to first
+2. add valid numbers to stack A
+3. return 1 if error; otherwise 0
+*/
 static int	parse_args(t_stacks *ab, int argc, char **argv)
 {
 	int	i;
@@ -78,7 +102,10 @@ static int	parse_args(t_stacks *ab, int argc, char **argv)
 	}
 	return (0);
 }
-
+/*
+ initialize the stacks, parse the input and check if sortng
+ needed . Rus the selected alg and free mem
+*/
 int	main(int argc, char **argv)
 {
 	t_stacks	ab;

@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/10 11:58:40 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/06 14:05:08 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/12 12:56:24 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <limits.h>
 
 /*
-**	Looks for duplicate input
+**	recursively searches stack A for a given num (duplicates)
+	return 1 if found, otherwise 0
 */
 
 int	value_exists(t_stack *a, int data)
@@ -55,7 +56,9 @@ static int	is_int(char *str)
 }
 
 /*
-**	Returns 1 if str is not a valid int or is a duplicate, else 0
+ 1. Checks if args is a valid alg option
+ 2. sets the selected alg or enable bench mode
+ 3. returns 1 if recognized, otherwise 0
 */
 
 int	alg_check(t_stacks *ab, char *str)
@@ -74,7 +77,11 @@ int	alg_check(t_stacks *ab, char *str)
 		return (0);
 	return (1);
 }
-
+/*
+ 1. checks if args are valid int
+ 2. and does not already exist in stack A
+ 3. return 1 if valid, otherwise 0
+*/
 int	arg_check(t_stack *a, char *str)
 {
 	if (is_int(str) && value_exists(a, ft_atoi(str)) == 0)
