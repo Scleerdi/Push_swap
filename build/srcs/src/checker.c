@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/06 16:31:25 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/11 12:56:13 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/13 15:35:52 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,8 +141,8 @@ int	main(int argc, char **argv)
 		}
 		i--;
 	}
-	//printstacks(&ab);
 	ret = declare(&ab);
+	printstacks(&ab);
 	del_stacks(&ab);
 	return (ret);
 }
