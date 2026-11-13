@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/16 11:44:20 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/20 13:37:24 by scleerdi      ########   odam.nl         */
+/*   Updated: 2026/11/13 13:53:09 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 /*
 **	Checks if the stack its fed is sorted in ascending order
+** Returns 1 if sorted or empty, otherwise 0
 */
 
 int	stack_sorted(t_stack **stack)

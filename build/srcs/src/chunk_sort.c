@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 12:20:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/05 12:04:14 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/12 17:54:04 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	get_position(t_stack *b, int index)
 }
 
 	/* 
-	**	pushed = 0
+	**	pushed (num of elements moved to B)= 0
 	**	while A is not empty:
 	**	if the top of A has an index below (pushed + chunk):
 	**	pb it 

@@ -6,14 +6,15 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/13 15:26:05 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/11 12:05:16 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/13 13:49:17 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	Deletes and frees stacks A and B
+**	Frees every node in the linked list
+** Sets th stack pointer to NULL
 */
 
 static	void	del_stack(t_stack **astack)
@@ -30,7 +31,10 @@ static	void	del_stack(t_stack **astack)
 		free(trail);
 	}
 }
-
+/*
+** Frees all nodes in stacks A & B
+** Frees the benchmakr structure
+*/
 void	del_stacks(t_stacks *ab)
 {
 	del_stack(&ab->a);
