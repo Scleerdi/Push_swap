@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 12:20:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:16:35 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 14:06:09 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ static void	pull_back(t_stacks *ab)
 
 void	chunk_sort(t_stacks *ab)
 {
+	if (ab->size_a == 2 && ab->bench->d == 1)
+		return (execute(ab, e_sa));
 	push_chunks(ab, 2 * ft_sqrt(ab->size_a));
 	pull_back(ab);
 }

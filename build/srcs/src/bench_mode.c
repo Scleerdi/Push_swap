@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 12:35:31 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:15:56 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 13:51:05 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	benchmark(t_stacks *ab, int alg, double d)
 	int			i;
 
 	bench = ft_calloc(1, sizeof(t_bench));
+	if (!bench)
+		error_delete_all(ab);
 	bench->fd = 2;
 	bench->d = d;
 	bench->alg = alg;

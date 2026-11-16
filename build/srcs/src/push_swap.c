@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:34:56 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:13:45 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 17:22:21 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ static int	loop(t_stacks *ab, char *str)
 
 static int	adaptive_pick(double d)
 {
-	if (d <= 0.2)
+	if (d < 0.2)
 		return (1);
-	if (d <= 0.5)
+	if (d >= 0.2 && d < 0.5)
 		return (2);
 	return (3);
 }
@@ -57,19 +57,14 @@ int	push_swap(t_stacks *ab, double d)
 	ab->bench->d = d;
 	alg = ab->bench->alg;
 	if (alg == 0)
-	{
-		if (ab->size_a <= 5)
-			alg = 1;
-		else
-			alg = adaptive_pick(d);
-	}
+		alg = adaptive_pick(d);
 	ab->bench->path = alg;
 	normalize(ab->a);
-	if (alg == 1)
+	if (alg == 1 && d != 0)
 		sort_simple(ab);
-	else if (alg == 2)
+	else if (alg == 2 && d != 0)
 		chunk_sort(ab);
-	else
+	else if (alg == 3 && d != 0)
 		radix_sort(ab);
 	if (ab->bench->on)
 		print_b(ab);
@@ -111,7 +106,7 @@ int	main(int argc, char **argv)
 	if (!ab.bench || parse_args(&ab, argc, argv))
 		return (error_delete_all(&ab));
 	ab.bench->fd = 2;
-	if (ab.size_a != 0 && sorted(&ab) == 0)
+	if (ab.size_a != 0)
 		push_swap(&ab, compute_disorder(&ab));
 	del_stacks(&ab);
 	return (0);
