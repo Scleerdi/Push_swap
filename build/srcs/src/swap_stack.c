@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   swap_stack.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 15:27:26 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:43:39 by gshabait      ########   odam.nl         */
+/*   Created: 2026/11/16 10:35:38 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:35:40 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

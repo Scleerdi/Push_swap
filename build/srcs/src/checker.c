@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   checker.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/06 16:31:25 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/13 15:35:52 by sicleerd      ########   odam.nl         */
+/*   Created: 2026/11/16 10:29:42 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:29:45 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

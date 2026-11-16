@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   push_stack.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 15:26:48 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:15:31 by gshabait      ########   odam.nl         */
+/*   Created: 2026/11/16 10:34:16 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:34:18 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

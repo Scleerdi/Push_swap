@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   printstacks.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 15:26:42 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:57:24 by gshabait      ########   odam.nl         */
+/*   Created: 2026/11/16 10:34:04 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:34:06 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

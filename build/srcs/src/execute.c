@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   execute.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 15:25:24 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/09 16:48:09 by sicleerd      ########   odam.nl         */
+/*   Created: 2026/11/16 10:33:52 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:33:54 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

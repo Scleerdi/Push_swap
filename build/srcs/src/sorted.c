@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   sorted.c                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/03 14:08:31 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:51:43 by gshabait      ########   odam.nl         */
+/*   Created: 2026/11/16 10:35:15 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:35:19 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

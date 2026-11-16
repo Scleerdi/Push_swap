@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   create_node.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/09/30 12:25:40 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:46:17 by gshabait      ########   odam.nl         */
+/*   Created: 2026/11/16 10:33:18 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:33:21 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

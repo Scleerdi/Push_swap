@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   arg_check.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/10 11:58:40 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/12 12:56:24 by gshabait      ########   odam.nl         */
+/*   Created: 2026/11/16 10:29:33 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:29:35 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

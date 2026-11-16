@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   reverse_rotate_stack.c                             :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 15:27:01 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:40:33 by gshabait      ########   odam.nl         */
+/*   Created: 2026/11/16 10:35:02 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:35:05 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

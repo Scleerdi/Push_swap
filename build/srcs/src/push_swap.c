@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   push_swap.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 15:26:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/12 14:25:33 by sicleerd      ########   odam.nl         */
+/*   Created: 2026/11/16 10:34:56 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:34:57 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
