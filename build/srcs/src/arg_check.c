@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:29:33 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 10:29:35 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:02:45 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /*
 **	recursively searches stack A for a given num (duplicates)
-	return 1 if found, otherwise 0
+**	return 1 if found, otherwise 0
 */
 
 int	value_exists(t_stack *a, int data)
@@ -56,9 +56,9 @@ static int	is_int(char *str)
 }
 
 /*
- 1. Checks if args is a valid alg option
- 2. sets the selected alg or enable bench mode
- 3. returns 1 if recognized, otherwise 0
+**	Checks if args is a valid alg option
+**	sets the selected alg or enable bench mode
+**	returns 1 if recognized, otherwise 0
 */
 
 int	alg_check(t_stacks *ab, char *str)
@@ -78,10 +78,11 @@ int	alg_check(t_stacks *ab, char *str)
 	return (1);
 }
 /*
- 1. checks if args are valid int
- 2. and does not already exist in stack A
- 3. return 1 if valid, otherwise 0
+**	checks if args are valid int
+**	and does not already exist in stack A
+**	return 1 if valid, otherwise 0
 */
+
 int	arg_check(t_stack *a, char *str)
 {
 	if (is_int(str) && value_exists(a, ft_atoi(str)) == 0)

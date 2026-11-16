@@ -6,14 +6,14 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 12:35:31 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/13 17:46:59 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:03:04 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 /*
-** prints the benchmark results
-** Show disorder, sorting strategy, and op counts
+**	prints the benchmark results
+**	Show disorder, sorting strategy, and op counts
 */
 void	print_b(t_stacks *ab)
 {
@@ -22,10 +22,11 @@ void	print_b(t_stacks *ab)
 	print_ops(ab->bench->ops, ab->bench->fd);
 }
 /*
-** Allocates and initializes the benchmark structure.
-** Stores the disorder and selected algorithm.
-** Sets all operation counters to zero.
+**	Allocates and initializes the benchmark structure.
+**	Stores the disorder and selected algorithm.
+**	Sets all operation counters to zero.
 */
+
 void	benchmark(t_stacks *ab, int alg, double d)
 {
 	t_bench		*bench;

@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/04 14:40:08 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:01:20 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:11:18 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int	max_bits(int size)
 ** Pushes 0 bits to B and rotates 1 bits in A.
 ** Then pushes everything from B back to A.
 */
+
 static void	sort_bit(t_stacks *ab, int bit)
 {
 	int	count;
@@ -50,6 +51,7 @@ static void	sort_bit(t_stacks *ab, int bit)
 ** starting from the least significant bit.
 ** Repeats until all required bits are processed. 
 */
+
 void	radix_sort(t_stacks *ab)
 {
 	int	bit;

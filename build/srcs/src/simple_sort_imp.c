@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 18:01:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/16 11:51:29 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:12:57 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	sort_three(t_stacks *ab)
 **handles 2 numbers directly, or reduce stack A to 3 numbers
 **sorts them, then pushes the remaining back from B
 */
+
 void	sort_simple(t_stacks *ab)
 {
 	if (ab->size_a == 2)
