@@ -6,18 +6,18 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 12:20:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/12 17:54:04 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:04:54 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-	/*
-	**	start counting at 0
-	**	walk down the list until you find the node whose index matches
-	**	count each node you walk past
-	**	return the count (its position from the top)
-	*/
+/*
+**	start counting at 0
+**	walk down the list until you find the node whose index matches
+**	count each node you walk past
+**	return the count (its position from the top)
+*/
 
 static int	get_position(t_stack *b, int index)
 {
@@ -32,16 +32,16 @@ static int	get_position(t_stack *b, int index)
 	return (i);
 }
 
-	/* 
-	**	pushed (num of elements moved to B)= 0
-	**	while A is not empty:
-	**	if the top of A has an index below (pushed + chunk):
-	**	pb it 
-	**	if the node now on top of B has an index below pushed: rb it
-	**	pushed goes up by one
-	**	otherwise:
-	**	ra
-	*/
+/* 
+**	pushed (num of elements moved to B)= 0
+**	while A is not empty:
+**	if the top of A has an index below (pushed + chunk):
+**	pb it 
+**	if the node now on top of B has an index below pushed: rb it
+**	pushed goes up by one
+**	otherwise:
+**	ra
+*/
 
 static void	push_chunks(t_stacks *ab, int chunk)
 {
@@ -62,14 +62,14 @@ static void	push_chunks(t_stacks *ab, int chunk)
 	}
 }
 
-	/* 
-	**	while B is not empty:
-	**	the biggest index left in B is always (size_b - 1)
-	**	find its position in B (get_position)
-	**	if it is in the top half: rb until it reaches the top
-	**	otherwise: rrb until it reaches the top
-	**	pa it
-	*/
+/* 
+**	while B is not empty:
+**	the biggest index left in B is always (size_b - 1)
+**	find its position in B (get_position)
+**	if it is in the top half: rb until it reaches the top
+**	otherwise: rrb until it reaches the top
+**	pa it
+*/
 
 static void	pull_back(t_stacks *ab)
 {
@@ -98,11 +98,11 @@ static void	pull_back(t_stacks *ab)
 	}
 }
 
-	/*	
-	**	chunk size = 2 times the square root of size_a
-	**	push_chunks with that size
-	**	pull_back
-	*/
+/*	
+**	chunk size = 2 times the square root of size_a
+**	push_chunks with that size
+**	pull_back
+*/
 
 void	chunk_sort(t_stacks *ab)
 {

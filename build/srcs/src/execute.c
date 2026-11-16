@@ -6,14 +6,14 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:33:52 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 10:33:54 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:06:03 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-** Prints an operation
+**	Prints an operation
 */
 
 static	void	print_op(t_op operation)
@@ -36,8 +36,8 @@ static	void	print_op(t_op operation)
 }
 
 /*
-** Updates stack size counters
-** A push from an empty stack does nothing, so the counters must not move
+**	Updates stack size counters
+**	A push from an empty stack does nothing, so the counters must not move
 */
 
 static	void	update_stack_size(t_stacks *ab, t_op operation)
@@ -55,8 +55,8 @@ static	void	update_stack_size(t_stacks *ab, t_op operation)
 }
 
 /*
-** Executes the operation without printing it (used by the checker)
-** Updates stack size counters
+**	Executes the operation without printing it (used by the checker)
+**	Updates stack size counters
 */
 
 void	execute_c(t_stacks *ab, t_op operation)
@@ -80,7 +80,7 @@ void	execute_c(t_stacks *ab, t_op operation)
 }
 
 /*
-** Executes and prints the operation
+**	Executes and prints the operation
 */
 
 void	execute(t_stacks *ab, t_op operation)

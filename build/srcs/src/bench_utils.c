@@ -6,15 +6,17 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/06 16:33:53 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 11:51:48 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:02:10 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 /*
-** Prints the selected sorting strategy and it's complexity
-** For adaptive mode, prints the algo actuall used
+**	Prints the selected sorting strategy and it's complexity
+**	For adaptive mode, prints the algo actuall used
 */
+
 void	print_strat(int alg, int path, int fd)
 {
 	ft_putstr_fd("[bench] strategy: ", fd);
@@ -35,10 +37,12 @@ void	print_strat(int alg, int path, int fd)
 			ft_putendl_fd("O(nlogn)", fd);
 	}
 }
+
 /*
-** Converts the disorder value into a percentage
-** Prints the percentage with two decimal places
+**	Converts the disorder value into a percentage
+**	Prints the percentage with two decimal places
 */
+
 void	print_percent(double disorder, int fd)
 {
 	int	scaled;
@@ -52,10 +56,12 @@ void	print_percent(double disorder, int fd)
 	ft_putnbr_fd(scaled % 100, fd);
 	ft_putendl_fd("%", fd);
 }
+
 /*
-** Adds up all operation counters
-** Prints the total number of ops performed
+**	Adds up all operation counters
+**	Prints the total number of ops performed
 */
+
 void	total_ops(int *ops, int fd)
 {
 	int	total_ops;
@@ -72,9 +78,11 @@ void	total_ops(int *ops, int fd)
 	ft_putnbr_fd(total_ops, fd);
 	ft_putchar_fd('\n', fd);
 }
+
 /*
-** prints the number of rotate and reverse rotate operations
+**	prints the number of rotate and reverse rotate operations
 */
+
 void	print_ops_2(int *ops, int fd)
 {
 	ft_putstr_fd("[bench] ra: ", fd);
@@ -91,11 +99,13 @@ void	print_ops_2(int *ops, int fd)
 	ft_putnbr_fd(ops[9], fd);
 	ft_putchar_fd('\n', fd);
 }
+
 /*
-**prints the total  number of ops
-**prints the swap and push counters
-**calls print_ops_2 to print the rotation counters 
+**	prints the total  number of ops
+**	prints the swap and push counters
+**	calls print_ops_2 to print the rotation counters 
 */
+
 void	print_ops(int *ops, int fd)
 {
 	total_ops(ops, fd);

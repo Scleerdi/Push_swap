@@ -6,14 +6,14 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:35:38 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 10:35:40 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:12:35 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	swaps the firt two nodes of a stack
+**	swaps the first two nodes of a stack
 */
 
 static	void	swap_stack(t_stack **stack)
@@ -35,9 +35,10 @@ static	void	swap_stack(t_stack **stack)
 		*stack = current;
 	}
 }
+
 /*
-**	swaps the firt two nodes of both stacks A & B
-** Updates the op counters
+**	Swaps the first two nodes of both stacks A & B
+**	Updates the op counters
 */
 
 void	ss(t_stacks *ab)
@@ -48,19 +49,23 @@ void	ss(t_stacks *ab)
 	swap_a(ab);
 	swap_b(ab);
 }
+
 /*
-** swaps the firt two nodes of both stacks A 
-** Updates the op counters
+**	Swaps the first two nodes of both stacks A 
+**	Updates the op counters
 */
+
 void	swap_a(t_stacks *ab)
 {
 	ab->bench->ops[0]++;
 	swap_stack(&ab->a);
 }
+
 /*
-** swaps the firt two nodes of both stacks B
-** Updates the op counters
+**	Swaps the first two nodes of both stacks B
+**	Updates the op counters
 */
+
 void	swap_b(t_stacks *ab)
 {
 	ab->bench->ops[1]++;
