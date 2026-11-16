@@ -1,0 +1,75 @@
+# Push Swap — Evaluation To-Do Checklist
+
+Based on the source-code review and the official 42 Push_swap subject v1.0 (16 November 2026).
+
+**How to use:** Work from top to bottom. Tick a box only after making the change and testing it. Findings are review recommendations, not proof that every issue will occur in normal execution.
+
+## 1. Must fix before evaluation
+
+
+• [x] **Fix adaptive algorithm complexity** (`adaptive_pick()` and relevant sorting functions). For disorder **below 0.20**, use a method with a defensible **O(n)** upper bound in Push_swap operations, not the current simple O(n²) method. For **0.20 ≤ disorder < 0.50**, use O(n√n); for **disorder ≥ 0.50**, use O(n log n). Review the `size_a <= 5` shortcut and document any justified special cases. **Done when:** threshold tests select the correct regime and you can explain operation-count bounds. **Subject:** p. 12..
+• [x] **Correct adaptive threshold comparisons** (`adaptive_pick()`). Replace the inclusive `<= 0.20` and `<= 0.50` boundaries with the subject's exact inequalities. **Done when:** values exactly at 0.20 and 0.50 choose the medium and complex regimes respectively. **Subject:** p. 12..
+• [x] **Add a `bonus` Makefile target for `checker`** and review whether checker-only files must use `_bonus.c`/`_bonus.h` naming under the common rules. Avoid unnecessary relinking. **Done when:** `make`, `make bonus`, `make clean`, `make fclean`, and `make re` work as intended. **Subject:** pp. 3, 19..
+• [ ] **Handle read errors separately from EOF** (`read_line.c:read_line()`, checker caller). A failed `read()` must not be treated as a valid partial instruction or normal EOF. **Done when:** simulated read failures lead to an error path and appropriate cleanup..
+• [x] **Fix unchecked allocation** (`bench_mode.c:benchmark()`). Check `ft_calloc` before accessing `bench->fd`; ensure an existing `ab->bench` cannot be silently leaked. If the function is unused, remove it. **Done when:** allocation failure cannot dereference NULL and ownership is clear..
+• [ ] **Verify `--bench` on sorted input** (`push_swap.c:main()`). Currently the sorted-input early exit skips the report. **Done when:** sorted input with `--bench` reports disorder, selected strategy and complexity, zero total operations, and all eleven per-operation counts on **stderr**, with no operations on stdout. **Subject:** p. 15..
+• [ ] **Complete the README contributor details** (`README.md`). Confirm the italicized first line contains the actual 42 logins; replace all contributor placeholders with the two learners' real contributions. **Done when:** README satisfies all Chapter VII items, including Description, Instructions, Resources, AI-use disclosure, and detailed algorithm justification. **Subject:** pp. 9, 18, 21..
+
+## 2. Important correctness and robustness improvements
+
+
+• [ ] **Prevent overflow in disorder calculation** (`disorder.c:compute_disorder()`). Widen before multiplying `size_a * (size_a - 1)`; for example, calculate pairs using double or a suitable wider integer type. **Done when:** the expression cannot overflow signed `int` before conversion..
+• [ ] **Replace recursive duplicate lookup with iteration** (`arg_check.c:value_exists()`). **Done when:** very large valid input does not consume call-stack space proportional to stack length..
+• [ ] **Keep checker stack size in sync with allocated nodes** (`checker.c:main()`). Increment `size_a` when a node is successfully created rather than relying solely on `argc - 1`. **Done when:** partial initialization and cleanup remain consistent..
+• [ ] **Decide and enforce strategy flag rules** (`push_swap.c:parse_args()`). Currently repeated/conflicting flags are accepted and the leftmost wins due to right-to-left parsing. **Done when:** flag behavior is intentional, documented, and tested for each selector and `--bench` combination. The subject requires selectors to work regardless of input size/disorder. **Subject:** p. 14..
+• [ ] **Verify benchmark reporting for all strategies** (`bench_utils.c`, `push_swap.c`). Report correct strategy, complexity, disorder percentage with two decimals, total operations, and counts for `sa sb ss pa pb ra rb rr rra rrb rrr`. **Done when:** stderr output matches actual operations for all four strategies. **Subject:** p. 15..
+
+## 3. Lower-priority code cleanup
+
+ than 1500 is good, less than 700 
+• [ ] **Remove unnecessary equality guard in swap** (`swap_stack.c:swap_stack()`), if it serves no intended purpose; valid inputs already prohibit duplicates..
+• [ ] **Consider validating operation enum values** before array indexing (`execute.c`). Current calls appear valid, but a future invalid enum could access outside an array..
+• [ ] **Consider a buffered line reader** (`read_line.c:append()`) to avoid repeated full-string copying on very long instructions..
+• [ ] **Remove stale commented-out `dup_stack()` declaration** (`push_swap.h`). Consider deriving `OP_COUNT` from an enum sentinel instead of hardcoding it..
+• [ ] **Make strategy complexity labels consistent** (`bench_utils.c:print_strat()`). Explain bounds in Push_swap operation counts, not merely conventional sorting complexity..
+
+## 4. Spellcheck and comment cleanup
+
+
+• [ ] **`arg_check.c`**: revise `recursively searches stack A for a given num (duplicates)`, `Checks if args is a valid alg option`, `sets the selected alg or enable bench mode`, and `checks if args are valid int` to clear, grammatical descriptions..
+• [ ] **`push_swap.c`**: correct `create new node`, `updates it's size` → `updates its size`, `allocations fails` → `allocation fails`, `algorithim` → `algorithm`, and `sortng needed . Rus the selected alg and free mem` → `sorting is needed. Runs the selected algorithm and frees memory.`.
+• [ ] **`checker.c`**: `non numerical imput` → `non-numerical input`; clarify `Calls Declare`..
+• [ ] **`del_stacks.c`**: `Sets th stack pointer` → `Sets the stack pointer`; `benchmakr structure` → `benchmark structure`..
+• [ ] **`disorder.c`**: `wront order` → `wrong order`..
+• [ ] **`bench_utils.c`**: `it's complexity` → `its complexity`; `algo actuall used` → `algorithm actually used`; `total  number` → `total number`..
+• [ ] **`simple_sort_imp.c`**: `thier values` → `their values`; `asc order` → `ascending order`; `or reduce stack A` → `or reduces stack A`..
+• [ ] **`radix_sort.c`**: `larget normalized index` → `largest normalized index`..
+• [ ] **`reverse_rotate_stack.c`**: in the reverse-rotate-A comment, `Increment the ra counter` → `Increments the rra counter.`.
+• [ ] **`chunk_sort.c`**: `pushed (num of elements moved to B)` → `pushed (number of elements moved to B)`..
+• [ ] **`stack_sorted.c`**: `the stack its fed` → `the supplied stack`..
+• [ ] **All commented source files**: standardize `stack A`/`stack B`, capitalization, punctuation, and ensure comments match behavior..
+
+## 5. Final testing checklist
+
+
+• [ ] Run `make re` with `-Wall -Wextra -Werror` and confirm there are no compiler warnings..
+• [ ] Run `norminette` on all submitted source and header files, including bonus files..
+• [ ] Run **Valgrind** on both programs with no arguments, valid input, duplicate input, out-of-range integers, and invalid checker instructions. Resolve all definite leaks and invalid reads/writes..
+• [ ] Run **AddressSanitizer and UndefinedBehaviorSanitizer** builds with valid, invalid, and randomized inputs; resolve reported issues..
+• [ ] Test every selector (`--simple`, `--medium`, `--complex`, `--adaptive`) and default mode on small, sorted, reverse-sorted, and randomized inputs..
+• [ ] Test checker with valid instructions, invalid instructions, empty stdin, and read failures; verify `OK`, `KO`, and `Error` behavior. **Subject:** p. 20..
+• [ ] Verify operations appear **only on stdout** and benchmark diagnostics **only on stderr**. **Subject:** pp. 14–15..
+• [ ] Benchmark **100 random numbers**: fewer than **2,000** operations to pass; below 1,500 is good, below 700 excellent. **Subject:** p. 17..
+• [ ] Benchmark **500 random numbers**: fewer than **12,000** operations to pass; below 8,000 is good, below 5,500 excellent. **Subject:** p. 17..
+• [ ] Verify no forbidden global variables or unauthorized external functions; ensure Makefile does not relink unnecessarily. **Subject:** pp. 3, 14..
+• [ ] Confirm README is at the **repository root**, and its very first line is exactly italicized: `*This project has been created as part of the 42 curriculum by <login1>, <login2>.*` with real logins substituted. **Subject:** p. 18..
+• [ ] Have both contributors review and explain the algorithms and be ready for a small live modification during evaluation. **Subject:** p. 21..
+
+## What has already been checked
+
+
+• [x] `make re` compiled successfully in the earlier review..
+• [x] 360 randomized sorting/checker comparisons passed (five configurations × six sizes × twelve trials)..
+• [x] Spot checks for duplicate values, integer bounds, sorted input, empty input, and invalid checker instructions passed..
+
+**Not yet certified:** no exhaustive memory-leak audit, Norm check, or 100/500-element operation-count benchmark has been completed. The checked tests do not prove compliance with the adaptive complexity requirements.
