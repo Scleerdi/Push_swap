@@ -6,14 +6,15 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 18:01:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/11 17:42:03 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 11:51:29 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 /*
-	5. Sorting the remaining three integers
-	6. Pushing everything back to stack A
+	**sort exactly 3 numbers in stack A
+	** compares thier values and uses swaps or rotations
+	** to put them in asc order
 */
 
 void	sort_three(t_stacks *ab)
@@ -44,9 +45,19 @@ void	sort_three(t_stacks *ab)
 	else if (a < b && b > c && a > c)
 		execute(ab, e_rra);
 }
-
+/*
+**sorts small stacks using swaps,rotations and pushes
+**handles 2 numbers directly, or reduce stack A to 3 numbers
+**sorts them, then pushes the remaining back from B
+*/
 void	sort_simple(t_stacks *ab)
 {
+	if (ab->size_a == 2)
+	{
+		if (ab->a->data > ab->a->next->data)
+			execute(ab, e_sa);
+		return;
+	}
 	while (ab->size_a > 3)
 	{
 		move_min_to_top(ab);

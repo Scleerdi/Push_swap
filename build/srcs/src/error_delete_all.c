@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   error_delete_all.c                                 :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/10 17:53:19 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/11 12:04:19 by sicleerd      ########   odam.nl         */
+/*   Created: 2026/11/16 10:33:38 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:33:40 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

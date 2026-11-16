@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   checker.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/06 16:31:25 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/11 17:41:51 by sicleerd      ########   odam.nl         */
+/*   Created: 2026/11/16 10:29:42 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 11:51:23 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ int	main(int argc, char **argv)
 		i--;
 	}
 	ret = declare(&ab);
+	//printstacks(&ab);
 	del_stacks(&ab);
 	return (ret);
 }

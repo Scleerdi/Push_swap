@@ -3,17 +3,18 @@
 /*                                                        ::::::::            */
 /*   create_node.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/09/30 12:25:40 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/07/20 12:46:47 by scleerdi      ########   odam.nl         */
+/*   Created: 2026/11/16 10:33:18 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:33:21 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	Creates linked list node and assigns it Data
+** Creates linked list node and assigns it Data
+** sets next to NULL
 */
 
 t_stack	*create_node(int data)

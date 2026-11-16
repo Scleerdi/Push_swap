@@ -38,9 +38,9 @@ Skip a `develop` branch. For two people it's overhead you'll forget to maintain.
 
 ### Phase 0: together
 
-- [ ] Commit the Linux fix, remove tracked binaries, add `.gitignore`
-- [ ] Add `index` to `t_stack` and a `normalize()` function that assigns ranks
-- [ ] Write the benchmark script (3, 5, 100 and 500 numbers, avg / worst / fail) and record your old numbers as the baseline (about 800 moves for 100, about 7,000 for 500, 12 for 5)
+- [x] Commit the Linux fix, remove tracked binaries, add `.gitignore`
+- [x] Add `index` to `t_stack` and a `normalize()` function that assigns ranks
+- [x] Write the benchmark script (3, 5, 100 and 500 numbers, avg / worst / fail) and record your old numbers as the baseline (about 800 moves for 100, about 7,000 for 500, 12 for 5)
 
 ### Phase 1: split
 
@@ -52,13 +52,13 @@ Skip a `develop` branch. For two people it's overhead you'll forget to maintain.
 
 **Person B: small sorts and edges**
 
-- [ ] Optimal 2, 3 and 5 number sorts (a hardcoded case table is fine)
-- [ ] Parsing and error edge cases: `INT_MIN` / `INT_MAX`, `+5`, `-0`, `""`, duplicates
+- [x] Optimal 2, 3 and 5 number sorts (a hardcoded case table is fine)
+- [x] Parsing and error edge cases: `INT_MIN` / `INT_MAX`, `+5`, `-0`, `""`, duplicates
 - [ ] Checker prints `Error` on an invalid instruction instead of `KO`
 - [ ] Valgrind on both programs, including error paths. The old `TODO` file says "find leak in checker"; the `checker()` rewrite removed one likely culprit (the stray `ft_strdup("")`), so confirm that.
 
 ### Phase 2: together
 
-- [ ] Remove the old algorithm files and the `t_pot` code
+- [x] Remove the old algorithm files and the `t_pot` code
 - [ ] Norminette, Makefile checks (`make` twice must not relink, `re` works), dead code cleanup (including the `loc_h` leftover in `high.c`)
 - [ ] Test on a fresh clone

@@ -6,15 +6,16 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 15:35:33 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/11 14:02:55 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/12 14:45:23 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-
-// please dont look directly at this function, it is very shy
-
+/*
+calculate how unsorted stack A is by counting pairs 
+of numbers that are in the wront order
+returns a disorder value between 0 (sorted) and 1 (reversed)
+*/
 double	compute_disorder(t_stacks *ab)
 {
 	t_stack	*i;

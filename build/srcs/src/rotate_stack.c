@@ -3,17 +3,17 @@
 /*                                                        ::::::::            */
 /*   rotate_stack.c                                     :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
+/*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 15:27:13 by scleerdi      #+#    #+#                 */
-/*   Updated: 2026/11/10 18:14:33 by sicleerd      ########   odam.nl         */
+/*   Created: 2026/11/16 10:35:09 by sicleerd      #+#    #+#                 */
+/*   Updated: 2026/11/16 10:35:10 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	Rotates the stack
+**	Moves the top node to the bottom of the stack
 */
 
 static	void	rotate_stack(t_stack **stack, int size)
@@ -36,7 +36,10 @@ static	void	rotate_stack(t_stack **stack, int size)
 	current->next = temp;
 	temp->next = NULL;
 }
-
+/*
+** Rotate both stacks A and B
+** Updates the op counters
+*/
 void	rr(t_stacks *ab)
 {
 	ab->bench->ops[4]--;
@@ -45,13 +48,19 @@ void	rr(t_stacks *ab)
 	rotate_a(ab);
 	rotate_b(ab);
 }
-
+/*
+**	Moves the top node of A to the bottom
+** Increament the ra counter
+*/
 void	rotate_a(t_stacks *ab)
 {
 	ab->bench->ops[4]++;
 	rotate_stack(&ab->a, ab->size_a);
 }
-
+/*
+**	Moves the top node of B to the bottom
+** Increament the rb counter
+*/
 void	rotate_b(t_stacks *ab)
 {
 	ab->bench->ops[5]++;
