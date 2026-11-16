@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/04 14:40:08 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:09:38 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:14:07 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 **	calculates how many binary bits we need to represent
 **	the larget normalized index (size -1) 
 */
+
 static int	max_bits(int size)
 {
 	int	bits;
@@ -48,11 +49,13 @@ static void	sort_bit(t_stacks *ab, int bit)
 	while (ab->b != NULL)
 		execute(ab, e_pa);
 }
+
 /* 
 **	Sorts Stack A by processing each binary bit,
 **	starting from the least significant bit.
 **	Repeats until all required bits are processed. 
 */
+
 void	radix_sort(t_stacks *ab)
 {
 	int	bit;

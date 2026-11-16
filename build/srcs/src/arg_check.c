@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:29:33 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:03:05 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:13:25 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,13 @@ int	alg_check(t_stacks *ab, char *str)
 		return (0);
 	return (1);
 }
+
 /*
 **	1. checks if args are valid int
 **	2. and does not already exist in stack A
 **	3. return 1 if valid, otherwise 0
 */
+
 int	arg_check(t_stack *a, char *str)
 {
 	if (is_int(str) && value_exists(a, ft_atoi(str)) == 0)
