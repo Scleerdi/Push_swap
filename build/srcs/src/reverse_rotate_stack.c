@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:35:02 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:11:59 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:18:00 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ static	void	reverse_rotate_stack(t_stack **stack, int size)
 	current->next = *stack;
 	*stack = current;
 }
+
 /*
-** Reverse rotate both stacks A and B
-** Updates the op counters
+**	Reverse rotate both stacks A and B
+**	Updates the op counters
 */
 
 void	rrr(t_stacks *ab)
@@ -49,9 +50,10 @@ void	rrr(t_stacks *ab)
 	reverse_rotate_a(ab);
 	reverse_rotate_b(ab);
 }
+
 /*
 **	Moves the bottom node of A to the top
-** Increament the ra counter
+**	Increment the ra counter
 */
 
 void	reverse_rotate_a(t_stacks *ab)
@@ -59,9 +61,10 @@ void	reverse_rotate_a(t_stacks *ab)
 	ab->bench->ops[7]++;
 	reverse_rotate_stack(&ab->a, ab->size_a);
 }
+
 /*
 **	Moves the bottom node of B to the top
-** Increament the rb counter
+**	Increment the rb counter
 */
 
 void	reverse_rotate_b(t_stacks *ab)

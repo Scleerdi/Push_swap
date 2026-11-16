@@ -6,15 +6,17 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:34:04 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 10:34:06 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:20:35 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 /*
-** Prints each number in a linked list on a separate line
-** Used to diplay the contents of a stack for debugging
+**	Prints each number in a linked list on a separate line
+**	Used to diplay the contents of a stack for debugging
 */
+
 static	void	print_list(t_stack *stack)
 {
 	t_stack	*current;
@@ -32,7 +34,7 @@ static	void	print_list(t_stack *stack)
 }
 
 /*
-** Print stacks for debug purposes
+**	Print stacks for debug purposes
 */
 
 void	printstacks(t_stacks *ab)

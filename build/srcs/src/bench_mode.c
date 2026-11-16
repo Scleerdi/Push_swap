@@ -6,21 +6,24 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 12:35:31 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:03:04 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:15:56 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 /*
 **	prints the benchmark results
 **	Show disorder, sorting strategy, and op counts
 */
+
 void	print_b(t_stacks *ab)
 {
 	print_percent(ab->bench->d, ab->bench->fd);
 	print_strat(ab->bench->alg, ab->bench->path, ab->bench->fd);
 	print_ops(ab->bench->ops, ab->bench->fd);
 }
+
 /*
 **	Allocates and initializes the benchmark structure.
 **	Stores the disorder and selected algorithm.

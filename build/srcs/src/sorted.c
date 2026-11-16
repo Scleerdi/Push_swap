@@ -6,15 +6,15 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:35:15 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 10:35:19 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:11:49 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-** Checks if B is empty and A is sorted
-** Returns 1 if both conditions are true, otherwise 0 
+**	Checks if B is empty and A is sorted
+**	Returns 1 if both conditions are true, otherwise 0 
 */
 
 int	sorted(t_stacks *ab)

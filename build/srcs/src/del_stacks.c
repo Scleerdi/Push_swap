@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:33:28 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:08:59 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:16:51 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 **	Frees every node in the linked list
-**	sets the stack pointer to NULL
+**	Sets th stack pointer to NULL
 */
 
 static	void	del_stack(t_stack **astack)
@@ -31,9 +31,10 @@ static	void	del_stack(t_stack **astack)
 		free(trail);
 	}
 }
+
 /*
 **	Frees all nodes in stacks A & B
-**	frees the benchmakr structure
+**	Frees the benchmakr structure
 */
 
 void	del_stacks(t_stacks *ab)

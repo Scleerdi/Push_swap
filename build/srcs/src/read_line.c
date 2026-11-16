@@ -6,14 +6,15 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 17:16:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:11:43 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:17:52 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 /*
-** Adds one char to the end of a string
-** frees the old string and returns the new one
+**	Adds one char to the end of a string
+**	frees the old string and returns the new one
 */
 
 static char	*append(char *line, char c)

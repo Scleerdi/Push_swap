@@ -6,16 +6,16 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 16:05:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/09 13:56:12 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:11:42 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 /*
-	1. finding the min value
-	2. finding it's position in the linked list
-	3. Rotating the min to the top using ra or rra
-	4. pushing the min to stack B
+**	1. finding the min value
+**	2. finding it's position in the linked list
+**	3. Rotating the min to the top using ra or rra
+**	4. pushing the min to stack B
 */
 
 int	find_min(t_stack *stack)

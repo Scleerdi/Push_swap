@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:34:16 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:10:35 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 12:17:20 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ void	push_stack(t_stack **dst, t_stack **src)
 		(*dst)->next = temp;
 	}
 }
+
 /*
-**move the top node from stack B to stack A
-**Increament the pa op counter
+**	Move the top node from stack B to stack A
+**	increment the pa op counter
 */
 
 void	push_a(t_stacks *ab)
@@ -47,9 +48,10 @@ void	push_a(t_stacks *ab)
 	ab->bench->ops[10]++;
 	push_stack(&ab->a, &ab->b);
 }
+
 /*
-**move the top node from stack A to stack B
-**Increament the pb op counter
+**	Move the top node from stack A to stack B
+**	increment the pb op counter
 */
 
 void	push_b(t_stacks *ab)
