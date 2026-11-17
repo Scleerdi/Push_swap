@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 17:16:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:17:52 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 12:44:14 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,33 @@ static char	*append(char *line, char c)
 **	Returns NULL at end of input (or on error)
 */
 
-char	*read_line(int fd)
+char	*read_line(int fd, int *error)
 {
 	char	*line;
 	char	c;
 	int		ret;
 
+	*error = 0;
 	line = ft_strdup("");
 	if (!line)
+	{
+		*error = 1;
 		return (NULL);
+	}
 	ret = read(fd, &c, 1);
 	while (ret > 0 && c != '\n')
 	{
 		line = append(line, c);
 		if (!line)
+		{
+			*error = 1;
 			return (NULL);
+		}
 		ret = read(fd, &c, 1);
 	}
-	if (ret <= 0 && *line == '\0')
+	if (ret == -1 || (ret == 0 && *line != '\0'))
+		*error = 1;
+	if (ret <= 0)
 	{
 		free(line);
 		return (NULL);
