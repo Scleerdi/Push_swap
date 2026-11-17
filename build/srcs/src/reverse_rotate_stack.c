@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:35:02 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:18:00 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 11:49:02 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ static	void	reverse_rotate_stack(t_stack **stack, int size)
 
 void	rrr(t_stacks *ab)
 {
-	ab->bench->ops[7]--;
-	ab->bench->ops[8]--;
-	ab->bench->ops[9]++;
+	ab->bench->ops[e_rra]--;
+	ab->bench->ops[e_rrb]--;
+	ab->bench->ops[e_rrr]++;
 	reverse_rotate_a(ab);
 	reverse_rotate_b(ab);
 }
@@ -58,7 +58,7 @@ void	rrr(t_stacks *ab)
 
 void	reverse_rotate_a(t_stacks *ab)
 {
-	ab->bench->ops[7]++;
+	ab->bench->ops[e_rra]++;
 	reverse_rotate_stack(&ab->a, ab->size_a);
 }
 
@@ -69,6 +69,6 @@ void	reverse_rotate_a(t_stacks *ab)
 
 void	reverse_rotate_b(t_stacks *ab)
 {
-	ab->bench->ops[8]++;
+	ab->bench->ops[e_rrb]++;
 	reverse_rotate_stack(&ab->b, ab->size_b);
 }

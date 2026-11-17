@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:34:16 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:17:20 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 11:47:44 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	push_stack(t_stack **dst, t_stack **src)
 
 void	push_a(t_stacks *ab)
 {
-	ab->bench->ops[10]++;
+	ab->bench->ops[e_pa]++;
 	push_stack(&ab->a, &ab->b);
 }
 
@@ -56,6 +56,6 @@ void	push_a(t_stacks *ab)
 
 void	push_b(t_stacks *ab)
 {
-	ab->bench->ops[11]++;
+	ab->bench->ops[e_pb]++;
 	push_stack(&ab->b, &ab->a);
 }
