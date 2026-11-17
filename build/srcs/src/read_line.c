@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 17:16:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/17 14:17:14 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 14:38:14 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static char	*append(char *line, char c)
 **	Reads one line from fd, without the trailing newline
 **	Returns NULL at end of input (or on error)
 */
+
 static char	*read_chars(int fd, char *line, int *error)
 {
 	char	c;
