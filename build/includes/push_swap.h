@@ -6,15 +6,13 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/30 13:54:41 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/17 12:27:39 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/17 13:46:54 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
 # include "libft.h"
-# include <stdio.h>
 
 typedef struct s_stack
 {
