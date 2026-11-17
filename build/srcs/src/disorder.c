@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 /*
-**	Calculate how unsorted stack A is by counting pairs 
+**	Calculate how unsorted stack A is by counting pairs
 **	of numbers that are in the wront order
 **	returns a disorder value between 0 (sorted) and 1 (reversed)
 */

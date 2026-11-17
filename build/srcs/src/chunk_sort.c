@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 12:20:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:16:35 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 14:06:09 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static int	get_position(t_stack *b, int index)
 	return (i);
 }
 
-/* 
+/*
 **	pushed (num of elements moved to B)= 0
 **	while A is not empty:
 **	if the top of A has an index below (pushed + chunk):
-**	pb it 
+**	pb it
 **	if the node now on top of B has an index below pushed: rb it
 **	pushed goes up by one
 **	otherwise:
@@ -62,7 +62,7 @@ static void	push_chunks(t_stacks *ab, int chunk)
 	}
 }
 
-/* 
+/*
 **	while B is not empty:
 **	the biggest index left in B is always (size_b - 1)
 **	find its position in B (get_position)
@@ -98,7 +98,7 @@ static void	pull_back(t_stacks *ab)
 	}
 }
 
-/*	
+/*
 **	chunk size = 2 times the square root of size_a
 **	push_chunks with that size
 **	pull_back
@@ -106,6 +106,8 @@ static void	pull_back(t_stacks *ab)
 
 void	chunk_sort(t_stacks *ab)
 {
+	if (ab->size_a == 2 && ab->bench->d == 1)
+		return (execute(ab, e_sa));
 	push_chunks(ab, 2 * ft_sqrt(ab->size_a));
 	pull_back(ab);
 }

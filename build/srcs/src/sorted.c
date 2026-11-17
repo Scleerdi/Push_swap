@@ -14,7 +14,7 @@
 
 /*
 **	Checks if B is empty and A is sorted
-**	Returns 1 if both conditions are true, otherwise 0 
+**	Returns 1 if both conditions are true, otherwise 0
 */
 
 int	sorted(t_stacks *ab)

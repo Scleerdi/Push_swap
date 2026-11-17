@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/06 16:33:53 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:16:06 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 11:50:09 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,39 +86,39 @@ void	total_ops(int *ops, int fd)
 void	print_ops_2(int *ops, int fd)
 {
 	ft_putstr_fd("[bench] ra: ", fd);
-	ft_putnbr_fd(ops[4], fd);
+	ft_putnbr_fd(ops[e_ra], fd);
 	ft_putstr_fd(" rb: ", fd);
-	ft_putnbr_fd(ops[5], fd);
+	ft_putnbr_fd(ops[e_rb], fd);
 	ft_putstr_fd(" rr: ", fd);
-	ft_putnbr_fd(ops[6], fd);
+	ft_putnbr_fd(ops[e_rr], fd);
 	ft_putstr_fd(" rra: ", fd);
-	ft_putnbr_fd(ops[7], fd);
+	ft_putnbr_fd(ops[e_rra], fd);
 	ft_putstr_fd(" rrb: ", fd);
-	ft_putnbr_fd(ops[8], fd);
+	ft_putnbr_fd(ops[e_rrb], fd);
 	ft_putstr_fd(" rrr: ", fd);
-	ft_putnbr_fd(ops[9], fd);
+	ft_putnbr_fd(ops[e_rrr], fd);
 	ft_putchar_fd('\n', fd);
 }
 
 /*
 **	prints the total  number of ops
 **	prints the swap and push counters
-**	calls print_ops_2 to print the rotation counters 
+**	calls print_ops_2 to print the rotation counters
 */
 
 void	print_ops(int *ops, int fd)
 {
 	total_ops(ops, fd);
 	ft_putstr_fd("[bench] sa: ", fd);
-	ft_putnbr_fd(ops[0], fd);
+	ft_putnbr_fd(ops[e_sa], fd);
 	ft_putstr_fd(" sb: ", fd);
-	ft_putnbr_fd(ops[1], fd);
+	ft_putnbr_fd(ops[e_sb], fd);
 	ft_putstr_fd(" ss: ", fd);
-	ft_putnbr_fd(ops[2], fd);
+	ft_putnbr_fd(ops[e_ss], fd);
 	ft_putstr_fd(" pa: ", fd);
-	ft_putnbr_fd(ops[10], fd);
+	ft_putnbr_fd(ops[e_pa], fd);
 	ft_putstr_fd(" pb: ", fd);
-	ft_putnbr_fd(ops[11], fd);
+	ft_putnbr_fd(ops[e_pb], fd);
 	ft_putchar_fd('\n', fd);
 	print_ops_2(ops, fd);
 }

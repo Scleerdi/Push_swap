@@ -6,31 +6,29 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:35:02 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:18:00 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 12:00:29 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	Moves the bottom node to the top 
+**	Moves the bottom node to the top
 */
 
-static	void	reverse_rotate_stack(t_stack **stack, int size)
+static	void	reverse_rotate_stack(t_stack **stack)
 {
 	t_stack	*previous;
 	t_stack	*current;
-	int		i;
 
-	i = 0;
 	current = *stack;
-	if (current == NULL || size == 1)
+	previous = NULL;
+	if (current == NULL || current->next == NULL)
 		return ;
-	while (i < size && current->next != NULL)
+	while (current->next != NULL)
 	{
 		previous = current;
 		current = current->next;
-		i++;
 	}
 	previous->next = NULL;
 	current->next = *stack;
@@ -44,9 +42,9 @@ static	void	reverse_rotate_stack(t_stack **stack, int size)
 
 void	rrr(t_stacks *ab)
 {
-	ab->bench->ops[7]--;
-	ab->bench->ops[8]--;
-	ab->bench->ops[9]++;
+	ab->bench->ops[e_rra]--;
+	ab->bench->ops[e_rrb]--;
+	ab->bench->ops[e_rrr]++;
 	reverse_rotate_a(ab);
 	reverse_rotate_b(ab);
 }
@@ -58,8 +56,8 @@ void	rrr(t_stacks *ab)
 
 void	reverse_rotate_a(t_stacks *ab)
 {
-	ab->bench->ops[7]++;
-	reverse_rotate_stack(&ab->a, ab->size_a);
+	ab->bench->ops[e_rra]++;
+	reverse_rotate_stack(&ab->a);
 }
 
 /*
@@ -69,6 +67,6 @@ void	reverse_rotate_a(t_stacks *ab)
 
 void	reverse_rotate_b(t_stacks *ab)
 {
-	ab->bench->ops[8]++;
-	reverse_rotate_stack(&ab->b, ab->size_b);
+	ab->bench->ops[e_rrb]++;
+	reverse_rotate_stack(&ab->b);
 }

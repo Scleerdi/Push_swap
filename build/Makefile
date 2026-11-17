@@ -6,7 +6,7 @@
 #    By: sicleerd <sicleerd@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/10/30 13:58:46 by sicleerd      #+#    #+#                  #
-#    Updated: 2026/11/10 17:01:56 by sicleerd      ########   odam.nl          #
+#    Updated: 2026/11/16 15:57:26 by sicleerd      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,9 @@ CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 CPPFLAGS	= -I includes -I $(LIBFT_DIR) -MMD -MP
 
-all: $(NAMEP) $(NAMEC)
+all: $(NAMEP)
+
+bonus: $(NAMEC)
 
 $(NAMEP): $(OBJ_P) $(OBJ_COMMON) $(LIBFT)
 	@$(CC) $(CFLAGS) $(OBJ_P) $(OBJ_COMMON) $(LIBFT) -o $@
@@ -77,4 +79,4 @@ fclean: clean
 re: fclean
 	@$(MAKE) --no-print-directory all
 
-.PHONY: all clean fclean re FORCE
+.PHONY: all bonus clean fclean re FORCE

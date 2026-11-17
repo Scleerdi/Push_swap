@@ -6,15 +6,15 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/04 14:40:08 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:17:43 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/16 14:05:30 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* 
+/*
 **	calculates how many binary bits we need to represent
-**	the larget normalized index (size -1) 
+**	the larget normalized index (size -1)
 */
 
 static int	max_bits(int size)
@@ -50,10 +50,10 @@ static void	sort_bit(t_stacks *ab, int bit)
 		execute(ab, e_pa);
 }
 
-/* 
+/*
 **	Sorts Stack A by processing each binary bit,
 **	starting from the least significant bit.
-**	Repeats until all required bits are processed. 
+**	Repeats until all required bits are processed.
 */
 
 void	radix_sort(t_stacks *ab)
@@ -63,6 +63,8 @@ void	radix_sort(t_stacks *ab)
 
 	size = max_bits(ab->size_a);
 	bit = 0;
+	if (ab->size_a == 2 && ab->bench->d == 1)
+		return (execute(ab, e_sa));
 	while (bit < size)
 	{
 		sort_bit(ab, bit);

@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:35:38 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:12:35 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/17 11:48:15 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,21 @@ static	void	swap_stack(t_stack **stack)
 
 void	ss(t_stacks *ab)
 {
-	ab->bench->ops[0]--;
-	ab->bench->ops[1]--;
-	ab->bench->ops[2]++;
+	ab->bench->ops[e_sa]--;
+	ab->bench->ops[e_sb]--;
+	ab->bench->ops[e_ss]++;
 	swap_a(ab);
 	swap_b(ab);
 }
 
 /*
-**	Swaps the first two nodes of both stacks A 
+**	Swaps the first two nodes of both stacks A
 **	Updates the op counters
 */
 
 void	swap_a(t_stacks *ab)
 {
-	ab->bench->ops[0]++;
+	ab->bench->ops[e_sa]++;
 	swap_stack(&ab->a);
 }
 
@@ -68,6 +68,6 @@ void	swap_a(t_stacks *ab)
 
 void	swap_b(t_stacks *ab)
 {
-	ab->bench->ops[1]++;
+	ab->bench->ops[e_sb]++;
 	swap_stack(&ab->b);
 }
