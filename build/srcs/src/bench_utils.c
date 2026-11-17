@@ -103,7 +103,7 @@ void	print_ops_2(int *ops, int fd)
 /*
 **	prints the total  number of ops
 **	prints the swap and push counters
-**	calls print_ops_2 to print the rotation counters 
+**	calls print_ops_2 to print the rotation counters
 */
 
 void	print_ops(int *ops, int fd)

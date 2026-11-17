@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:33:52 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:06:03 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/17 12:16:16 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 static	void	print_op(t_op operation)
 {
-	char *const	flutes[OP_COUNT] = {
+	char *const	ops[OP_COUNT] = {
 	[e_sa] = "sa\n",
 	[e_sb] = "sb\n",
 	[e_ra] = "ra\n",
@@ -32,7 +32,7 @@ static	void	print_op(t_op operation)
 	[e_rrr] = "rrr\n",
 	};
 
-	ft_putstr_fd(flutes[operation], 1);
+	ft_putstr_fd(ops[operation], 1);
 }
 
 /*

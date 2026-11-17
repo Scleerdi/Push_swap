@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-/* 
+/*
 **	calculates how many binary bits we need to represent
-**	the larget normalized index (size -1) 
+**	the larget normalized index (size -1)
 */
 
 static int	max_bits(int size)
@@ -50,10 +50,10 @@ static void	sort_bit(t_stacks *ab, int bit)
 		execute(ab, e_pa);
 }
 
-/* 
+/*
 **	Sorts Stack A by processing each binary bit,
 **	starting from the least significant bit.
-**	Repeats until all required bits are processed. 
+**	Repeats until all required bits are processed.
 */
 
 void	radix_sort(t_stacks *ab)

@@ -51,7 +51,7 @@ void	ss(t_stacks *ab)
 }
 
 /*
-**	Swaps the first two nodes of both stacks A 
+**	Swaps the first two nodes of both stacks A
 **	Updates the op counters
 */
 
