@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:29:42 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:16:18 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 12:28:28 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ int	convert_to_command(t_stacks *ab, char *line)
 int	checker(t_stacks *ab)
 {
 	char	*line;
+	int		*error;
 
-	line = read_line(0);
+	line = read_line(0, &error);
 	while (line)
 	{
 		if (convert_to_command(ab, line) == 0)
@@ -64,8 +65,10 @@ int	checker(t_stacks *ab)
 			return (-1);
 		}
 		free(line);
-		line = read_line(0);
+		line = read_line(0, &error);
 	}
+	if (error)
+		return (-1);
 	return (sorted(ab));
 }
 

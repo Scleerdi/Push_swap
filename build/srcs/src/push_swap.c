@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:34:56 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:13:45 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/16 15:35:36 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,7 @@ int	push_swap(t_stacks *ab, double d)
 	ab->bench->d = d;
 	alg = ab->bench->alg;
 	if (alg == 0)
-	{
-		if (ab->size_a <= 5)
-			alg = 1;
-		else
-			alg = adaptive_pick(d);
-	}
+		alg = adaptive_pick(d);
 	ab->bench->path = alg;
 	normalize(ab->a);
 	if (alg == 1)
