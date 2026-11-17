@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:35:02 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/17 12:00:29 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:34:14 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	rrr(t_stacks *ab)
 
 /*
 **	Moves the bottom node of A to the top
-**	Increment the ra counter
+**	Increments the rra counter.
 */
 
 void	reverse_rotate_a(t_stacks *ab)

@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:29:42 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/17 14:37:39 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/17 17:32:54 by sicleerd      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ int	convert_to_command(t_stacks *ab, char *line)
 int	checker(t_stacks *ab)
 {
 	char	*line;
-	int		*error;
+	int		error;
 
-	error = NULL;
-	line = read_line(0, error);
+	error = 0;
+	line = read_line(0, &error);
 	while (line)
 	{
 		if (convert_to_command(ab, line) == 0)
@@ -120,8 +120,8 @@ int	declare(t_stacks *ab)
 
 /*
 **	Initiates the struct that holds stacks A and B
-**	Checks for duplicate input and non numerical imput
-**	Calls Declare
+**	Checks for duplicate input and non-numerical input
+**	Calls declare().
 */
 
 int	main(int argc, char **argv)

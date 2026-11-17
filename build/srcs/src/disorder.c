@@ -6,14 +6,14 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/02 15:35:33 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:16:56 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:30:29 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 /*
 **	Calculate how unsorted stack A is by counting pairs
-**	of numbers that are in the wront order
+**	of numbers that are in the wrong order
 **	returns a disorder value between 0 (sorted) and 1 (reversed)
 */
 

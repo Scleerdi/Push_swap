@@ -6,16 +6,16 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:34:56 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/17 14:01:59 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:27:55 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	1. converts args into int and create new node
-**	2. adds the node to the top of stack A and updates it's size
-**	3. return 1 if allocations fails, otherwise 0
+**	1. converts args into int and creates a new node
+**	2. adds the node to the top of stack A and updates its size
+**	3. return 1 if allocation fails, otherwise 0
 */
 
 static int	loop(t_stacks *ab, char *str)
@@ -32,7 +32,7 @@ static int	loop(t_stacks *ab, char *str)
 }
 
 /*
-**	Picks an algorithim based on alg or disorder
+**	Picks an algorithm based on alg or disorder
 */
 
 static int	adaptive_pick(double d)
@@ -93,8 +93,8 @@ static int	parse_args(t_stacks *ab, int argc, char **argv)
 }
 
 /*
-**	initialize the stacks, parse the input and check if sortng
-**	needed . Rus the selected alg and free mem
+**	Initialize the stacks, parse the input and check if sorting is needed.
+**	Runs the selected algorithm and frees memory.
 */
 
 int	main(int argc, char **argv)

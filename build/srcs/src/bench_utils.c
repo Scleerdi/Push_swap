@@ -6,15 +6,15 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/06 16:33:53 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/17 11:50:09 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:31:42 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	Prints the selected sorting strategy and it's complexity
-**	For adaptive mode, prints the algo actuall used
+**	Prints the selected sorting strategy and its complexity
+**	For adaptive mode, prints the algorithm actually used
 */
 
 void	print_strat(int alg, int path, int fd)

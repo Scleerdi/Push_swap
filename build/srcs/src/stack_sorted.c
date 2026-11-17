@@ -6,14 +6,14 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:35:25 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:11:54 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:35:36 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-**	Checks if the stack its fed is sorted in ascending order
+**	Checks if the supplied stack is sorted in ascending order
 **	Returns 1 if sorted or empty, otherwise 0
 */
 
