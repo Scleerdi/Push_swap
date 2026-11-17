@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/16 10:33:28 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:16:51 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:29:47 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 **	Frees every node in the linked list
-**	Sets th stack pointer to NULL
+**	Sets the stack pointer to NULL
 */
 
 static	void	del_stack(t_stack **astack)
@@ -34,7 +34,7 @@ static	void	del_stack(t_stack **astack)
 
 /*
 **	Frees all nodes in stacks A & B
-**	Frees the benchmakr structure
+**	Frees the benchmark structure
 */
 
 void	del_stacks(t_stacks *ab)

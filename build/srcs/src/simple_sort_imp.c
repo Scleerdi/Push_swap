@@ -6,7 +6,7 @@
 /*   By: gshabait <gshabait@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 18:01:29 by gshabait      #+#    #+#                 */
-/*   Updated: 2026/11/16 12:18:09 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:32:38 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 /*
 **	sort exactly 3 numbers in stack A
-**	compares thier values and uses swaps or rotations
-**	to put them in asc order
+**	compares their values and uses swaps or rotations
+**	to put them in ascending order
 */
 
 void	sort_three(t_stacks *ab)
@@ -49,7 +49,7 @@ void	sort_three(t_stacks *ab)
 
 /*
 **	sorts small stacks using swaps,rotations and pushes
-**	handles 2 numbers directly, or reduce stack A to 3 numbers
+**	handles 2 numbers directly, or reduces stack A to 3 numbers
 **	sorts them, then pushes the remaining back from B
 */
 

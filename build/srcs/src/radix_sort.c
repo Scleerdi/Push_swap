@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/04 14:40:08 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/16 14:05:30 by sicleerd      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:33:07 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 **	calculates how many binary bits we need to represent
-**	the larget normalized index (size -1)
+**	the largest normalized index (size -1)
 */
 
 static int	max_bits(int size)

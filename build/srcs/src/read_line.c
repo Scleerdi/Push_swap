@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 17:16:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/17 14:17:14 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 14:53:01 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ static char	*read_chars(int fd, char *line, int *error)
 		}
 		ret = read(fd, &c, 1);
 	}
-	if (ret == -1 || (ret == 0 && *line != '\0'))
+	if (ret == -1)
 		*error = 1;
-	if (ret <= 0)
+	if (ret <= 0 && *line == '\0')
 	{
 		free(line);
 		return (NULL);
