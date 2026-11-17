@@ -6,7 +6,7 @@
 /*   By: sicleerd <sicleerd@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 17:16:34 by sicleerd      #+#    #+#                 */
-/*   Updated: 2026/11/17 12:44:14 by gshabait      ########   odam.nl         */
+/*   Updated: 2026/11/17 14:17:14 by gshabait      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,11 @@ static char	*append(char *line, char c)
 **	Reads one line from fd, without the trailing newline
 **	Returns NULL at end of input (or on error)
 */
-
-char	*read_line(int fd, int *error)
+static char	*read_chars(int fd, char *line, int *error)
 {
-	char	*line;
 	char	c;
 	int		ret;
 
-	*error = 0;
-	line = ft_strdup("");
-	if (!line)
-	{
-		*error = 1;
-		return (NULL);
-	}
 	ret = read(fd, &c, 1);
 	while (ret > 0 && c != '\n')
 	{
@@ -66,4 +57,18 @@ char	*read_line(int fd, int *error)
 		return (NULL);
 	}
 	return (line);
+}
+
+char	*read_line(int fd, int *error)
+{
+	char	*line;
+
+	*error = 0;
+	line = ft_strdup("");
+	if (!line)
+	{
+		*error = 1;
+		return (NULL);
+	}
+	return (read_chars(fd, line, error));
 }
